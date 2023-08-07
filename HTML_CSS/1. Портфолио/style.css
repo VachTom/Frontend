@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: "Montserrat", sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  color: #000;
+}
+
+.none {
+  display: none !important;
+}
+
+img{
+  max-width: 100%;
+}
+
+.container {
+  margin-left: auto; /* Данные свойства автоматически выравнивают слева и справа. Они работают для блочной модели, по умолчанию элемент отображается как блок на стр. */
+  margin-right: auto;
+  max-width: 1140px; /* Прописываем максимальную ширину для мобилки, если тел размер будет сужатся. Если монитор будет намного больше он остановаится до этой цифры которой указали */
+
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* ------- Header --------------------------------------------------------------- */
+.header {
+  display: flex; /* Определяем блочную модель для блока .header */
+  flex-direction: column; /* Выстраиваем flex элементы в колонку, оснавная ось - Y */
+  justify-content: center; /* вертикально по центру */
+  align-items: center; /* горизонтально по центру */
+
+  width: 100%;
+  height: 100vh;
+  background-color: #1e4776;
+  background-image: url(./img/header/header-bg4.jpg); /* Чтобы выйти на уровень вверх нужно поставить две точки */
+
+  background-size: cover;
+  background-position: center;
+}
+.header-title {
+  font-weight: 700; /* жирный шрифт */
+  font-size: 56px; /* размер шрифта 56 пикселей */
+  line-height: 90%; /* высота строки 72.8px - как получилась эта цифра если 130% * на 56 (56*1,3) = 72,8*/
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.header-subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase; /* Перевод всего текста в верхний регистр, т.е. заглавные буквы */
+  text-align: center;
+  color: #fff;
+}
+.header-arrow {
+  width: 48px;
+  height: 48px;
+
+  position: absolute; /* ставится поверх всех, с помощью этого можно переносить какой либо элемент */
+  /* top: 0%;  перемещает элемент вверх */
+  bottom: 30px; /* перемещает элемент вверх */
+  left: 50%; /* Некорректные 50%, тк начинает он с левой границы левой стороны данного блока, не с середины. Можно дополнительно применить этот прием: margin-left: -24px; но он не совершенен тк он завязан размером данного блока. Если размер блока поменятеся, нужно поменять и этот параметр тоже!*/
+
+  transform: translate(-50%, 0);
+}
+
+/* ------- Portfolio ---------------------------------------------------------------*/
+.portfolio {
+  padding-top: 80px;
+  padding-bottom: 115px;
+}
+
+.portfolio-header {
+  margin: 0%;
+  margin-bottom: 70px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 46px;
+  line-height: 130%; /* 59.8px */
+}
+
+.portfolio-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+  max-width: 540px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
+  /* Свойство тени для блока */
+  /* 0 px - это гор отступ справа, 10px - это верт отступ снизу, 40рх радиус размытия тени */
+  /* rgba первые три цифры сам цвет, 4 цифра отвечает за прозрачность */
+  box-shadow: 0px 10px 40px 0px rgba(126, 155, 189, 0.35);
+  transition: transform 0.15s ease-in; /* что? когда? и как? */
+}
+
+.card:hover {
+  transform: translateY(-15px); /* Перемещает элемент при наведении по оси Y */
+}
+
+.card-link {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 20px;
+  transition: color 0.15s;
+}
+
+.card-link:hover {
+  /*   color: #74744f;
+ */
+  color: rgb(54, 59, 57);
+}
+.card:last-child,
+.card:nth-last-child(2) {
+  /* nth-last-chald выбирает последний элемент начиная сконца (2)*/
+  margin: 0;
+}
+
+.card-img {
+  margin-bottom: 20px;
+}
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+  margin: 0;
+  margin-bottom: 13px;
+}
+.card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+
+/* ------- Footer ---------------------------------------------------------------*/
+.footer {
+  background-color: rgb(
+    54,
+    59,
+    57
+  ); /* просто так не сработает тк нет высоты у дива, если прописать текст цвет появится. Нужно прописать падинги */
+  padding-top: 45px; /* След шаг => Чтобы обозначить падинги нужно посмотреть в Фигме самый верхний элемент и записать padding-top: 45px и также с самым низким дивом */
+  padding-bottom: 130px; /* Низ  */
+  color: #fff;
+}
+
+.footer-row {
+  display: flex; /* Блочная структура */
+  flex-direction: row; /* Распределение каждого элемента по горизонтали */
+  justify-content: space-between; /* justify-content - это выравние по основной оси (Задается тут: flex-direction), space-between это как элементы будут выравниваться, по центру ,  с левого края или с правого*/
+}
+
+.footer-col {
+  flex-grow: 1;
+  max-width: 350px;
+}
+
+.footer-copyright {
+  color: #74744f;
+  line-height: 1.3; /* Ставь всегда в такой формате высоту, не в % соотношении, тк он будет умножать fomt-size только дива footer-copyright, а если в числовом формате написать, то будет умножать на все fomt-size дивы в которой входит footer-copyright, а это - footer-copyright-name и footer-copyright p*/
+}
+.footer-copyright-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-copyright p {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.footer-icons p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.footer-icons-row {
+  display: flex;
+  /*   flex-direction: row; */
+  align-items: center;
+}
+
+.footer-icons-row > * {
+  /* > означает что мы обращаемся к первому уровню вложенности, * означает что обращаемся ко всем элементам, + * означает что обращаемся ко всем элементам у кого есть сосед слева (у первого элемента нет соседа слева, поэтому к нему это не относится) */
+  margin-left: 30px;
+}
+
+.footer-contacts p {
+  color: #74744f;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3; /* 20.8px */
+  margin: 15px 0;
+}
+.footer-button {
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+  display: inline-block;
+  height: 50px;
+
+  border-radius: 50px;
+  border: 3px solid #fff;
+
+  padding-left: 30px; /* Это как margin, отступы*/
+  padding-right: 30px;
+  line-height: 44px; /* Высота строки, это как  margin-buttom/pading-button*/ /* Почему 44? Потому что border-radius: 50px и border: 3px, т.е. границы - 3 px, сверху и снизу -6 px, получилось 44px эта та цифра чтобы текст был по центру */
+
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in;
+}
+
+.footer-button:hover {
+  background-color: #fff; /* При наведении становится белым */
+  color: rgb(54, 59, 57);
+}
+
+/* -------------- Project ------------------------------------------------ */
+.project {
+  /*   padding-top: 80px; /* padding это работа с блоками, работа в начале */
+  /*  padding-bottom: 120px ;*/ /* Аналогичиный вариант написания 9:00 минута 5 урока по HTML https://www.youtube.com/playlist?list=PL1NBhQGGj46Y1AgV05YZz_-_zdKALLNvW */
+  padding: 80px 0 120px 0; /* Если укажем одно число - то это будет отвечать за падинги всех сторон;  @@@@@@@@@@ Если 2 числа: 1 чилсо отвечает за - сверху, 2 - снизу; @@@@@@@@@@ Если 3 числа: 1 - сверху, 2 - слева и справа, 3 - снизу;  @@@@@@@@@@ Если 4 числа запишем: 1 - сверху, 2 - справа, 3 - снизу, 4 - слева;*/
+  text-align: center;
+}
+.project-header {
+  margin: 0; /* margin это работа с текстом */
+  margin-bottom: 40px;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.3; /* 59.8px */
+}
+.project-img {
+  margin-bottom: 70px;
+}
+.project-description {
+  margin: 0 auto 60px;
+  max-width: 730px;
+}
+
+.project-description p {
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+.project-button-back {
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+  display: inline-block;
+  height: 60px;
+
+  border-radius: 50px;
+  border: 3px solid rgb(54, 59, 57);
+
+  padding-left: 30px; /* Это как margin, отступы*/
+  padding-right: 30px;
+  line-height: 54px; /* Высота строки, это как  margin-buttom/pading-button*/ /* Почему 44? Потому что border-radius: 50px и border: 3px, т.е. границы - 3 px, сверху и снизу -6 px, получилось 44px эта та цифра чтобы текст был по центру */
+
+  color: rgb(54, 59, 57);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in;
+}
+
+.project-button-back:hover {
+  background-color: rgb(54, 59, 57);
+  color: #fff;
+}
