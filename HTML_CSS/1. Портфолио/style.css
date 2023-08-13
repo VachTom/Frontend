@@ -8,7 +8,10 @@ body {
   /* font-family: 'Poppins', sans-serif; */
   color: #000;
 }
+html{
+  scroll-behavior: smooth; /* ПЛавная прокрутка стр при нажатии */
 
+}
 .none {
   display: none !important;
 }
@@ -35,8 +38,8 @@ img{
 
   width: 100%;
   height: 100vh;
-  background-color: #1e4776;
-  background-image: url(./img/header/header-bg4.jpg); /* Чтобы выйти на уровень вверх нужно поставить две точки */
+  /* background-color: #1e4776; */
+  /* background-image: url(./img/header/header-bg4.jpg); Чтобы выйти на уровень вверх нужно поставить две точки */
 
   background-size: cover;
   background-position: center;

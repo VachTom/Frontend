@@ -24,19 +24,19 @@
   <body>
     <div class="block"></div>
 
-    <header class="header ">
+    <header class="header" id="header"> <!-- Разница класса от ID в том что ID имеет уникальное название -->
       <h1 class="header-title">Товмасян Вачик</h1>
       <p class="header-subtitle">Веб-разработчик, фрилансер, создание сайтов</p>
-      <div class="header-arrow">
+      <a href="#portfolio" class="header-arrow"><!-- Нажимая на кнопку стрелки должны указать ID на какую стр перейдет -->
         <img
           src="img/header/chevron-down.svg"
           alt="Arrow"
         />
-      </div>
+      </a>
     </header>
 
     <main class="">
-      <section class="portfolio">
+      <section class="portfolio", id="portfolio">
         <div class="container">
           <h2 class="portfolio-header">Портфолио</h2>
 
@@ -114,7 +114,7 @@
         </div>
       </section>
     </main>
-    
+
     <footer class="footer">
       <div class="container">
         <div class="footer-row">
@@ -177,6 +177,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Бибилеотеки и плагины -->
+    <script src="./libs/jquery/jquery-3.7.0.min.js"></script>
+    <script src="./libs/vide/jquery.vide.min.js"></script>
+
+    <!-- Собственные скрипты и вызовы библеотек -->
+    <script src="./js/main.js"></script>
+
+
+
+
+
 
   </body>
 </html>

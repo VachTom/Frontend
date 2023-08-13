@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: beige;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  color: var(--dark, #333);
+
+  width: auto;
+  height: 100vh;
+
+  min-width: 320px;
+  min-height: 100%;
+  
+}
+
+.none {
+  display: none !important;
+}
+/* Непонятно нужно или нет */
+.site-container {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* justify-content: center; */
+  align-items: center;
+
+  gap: 80px;
+}
+
+/* ====================================== HEADER ====================================== */
+.header {
+  /* position: relative; */
+  
+  width: 1180px;
+}
+.header-conteiner {
+}
+
+.header-top {
+  display: flex;
+
+}
+.header-logo {
+  width: 180px;
+  height: 38px;
+  flex-shrink: 0;
+  padding: 3px 520px 36px 0px;
+}
+.header-email {
+  margin-left: 180px;
+  text-align: right;
+  width: 280px;
+  height: 45px;
+  flex-shrink: 0;
+}
+.header-email a {
+  color: var(--accent, #607ce6);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+}
+.header-email p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2; /* 16.8px */
+}
+
+.header-phone {
+  width: 180px;
+  height: 45px;
+  flex-shrink: 0;
+  margin-left: 20px;
+
+  text-align: right;
+}
+.header-phone p {
+  margin: 0;
+  color: var(--dark, #333);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2; /* 16.8px */
+}
+.header-phone a {
+  color: var(--accent, #607ce6);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+}
+
+.header-line {
+  position: absolute;
+  width: 1180px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--gray, #888);
+  margin-top: 77px;
+  margin-bottom: 16px;
+}
+
+.header-bottom {
+  display: flex;
+  margin-top: 48px;
+  
+}
+
+.header-nav ul{
+}
+.header-nav-ul{
+  
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 44px;
+  width: 951px;
+  height: 19px;
+  flex-shrink: 0;
+  font-size: 15;
+
+}
+.header-nav a {
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+
+  color: var(--dark, #333);
+  font-weight: 400;
+  line-height: 1.2; /* 19.2px */
+}
+.header-nav a:nth-last-child(1) {
+  /* margin-right: 22px; */
+}
+
+.header-bottom img {
+  /* margin-right: 4px; */
+  padding-left: 72px;
+}
+
+.header-call {
+  text-transform: uppercase; /* Перевод всего текста в верхний регистр, т.е. заглавные буквы */
+  color: var(--accent, #607ce6);
+  font-weight: 400;
+  /* width: 137px; */
+  height: 19px;
+  line-height: 1.2; /* 19.2px */
+  
+  text-decoration: none; /* Убирает нижнее подчеркивание */
+
+  color: var(--dark, #333);
+}
+.header-call a {
+
+}
+/* ====================================== HEADER ====================================== */
+
+/*  */
+
+/* ======================================  MAIN  ====================================== */
+.main {
+  width: 1180px;
+  height: 616px;
+}
+.hero-section {
+  width: 1180px;
+  height: 616px;
+}
+
+/* .container {
+  grid-template-columns: ;
+} */
+.hero-top {
+  display: grid;
+  /* grid-template-columns: ; */
+}
+
+.hero-title {
+  /* width: 580px;    */
+
+  color: var(--dark, #333);
+
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2; /* 72px */
+}
+/* .hero-discription {
+} */
+/* ======================================  MAIN  ====================================== */

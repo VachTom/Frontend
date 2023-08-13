@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Создание формы</title>
+  </head>
+  <body>
+    <h1>Создание формы</h1>
+    <p>
+      Элемент формы создаётся парным тегом <em>form</em>. Внутри размещаются
+      сами поля, причем те, что расположены за пределами элемента, отправлены не
+      будут. При необходимости в элементе формы можно использовать стороннюю
+      разметку. Тип отображения по умолчанию block (блочный элемент). Данный тег
+      имеет два обязательных атрибута: <em>action и method</em>.
+      <br />
+      В атрибуте action указывается ссылка на обработчик формы. Обработчиком
+      формы является PHP файл (или файл, написанный на других языках
+      программирования), который будет обрабатывать данные этой формы.
+      <br />
+      Атрибут method предназначен для указания метода отправки данных на сервер
+      (<a
+        href="https://stepik.org/lesson/180347/step/1?unit=154965"
+        target="_blank"
+        >GET или POST</a
+      >).
+    </p>
+
+    <h2>тег input</h2>
+    <p>
+      Поле задается одинарным тегом input. Данный тег стилизуется браузерами
+      по-разному. Тип отображения по умолчанию inline (встроенный элемент),
+      поэтому все поля отображаются в одной строке. Эта проблема решается
+      подключением стилей, а пока мы до них не дошли - используй тег br.<br />
+      Type – типы полей форм.
+    </p>
+
+    <h2>Один из возможных вариантов формы</h2>
+    <form>
+      Логин :<br />
+      <input
+        name="login"
+        type="text"
+        value=" "
+      />
+      <br />
+      Пароль : <br />
+      <input
+        name="pass"
+        type="password"
+        value=""
+      />
+      <br />
+      Чек Бокс <br />
+      <input
+        name="CheckBox"
+        type="CheckBox"
+        value=" "
+      />
+      CheckBox<br />
+      Радио-кнопки, type=radio, переключатели нужно между собой связывать,
+      поэтому name с одинаковыми значениями. Также необходим value.<br />
+      <input
+        type="radio"
+        name="gender"
+        value="male"
+        checked
+      />
+      Мужской<br />
+      <input
+        type="radio"
+        name="gender"
+        value="female"
+      />
+      Женский<br />
+      <input
+        type="radio"
+        name="gender"
+        value="other"
+      />
+      скрыть<br /><br />
+      <input type="file" /> загрузка файла<br /><br />
+      <input type="reset" /> сброс значений<br /><br />
+      <input type="submit" /> сабмит<br /><br />
+      <button>Нажми на меня</button> Просто нажми, и ничего не будет
+    </form>
+    <h3>Раскрывающийся список – select</h3>
+    <p>
+      У селекта есть несколько атрибутов: name, size, multiple. Атрибут
+      <strong>name</strong> работает как у радио-переключателей.
+      <strong>Size</strong>за количество отображаемых строк списка. В качестве
+      значения туда пижется положительное целое число. Атрибут
+      <strong>multiple</strong>
+      отвечает за то, можно ли выбрать сразу несколько вариантов из списка (как
+      чекбокс), это атрибут без значения.
+      <br />
+      Каждый элемент списка выделяется в тег option. Так же, как и с < input
+      type="checkbox"> и < input type="radio"> нужно указывать атрибут value со
+      значением, которое будет отправлено на сервер.
+    </p>
+    <br />
+    <form>
+      Выберите количество бигмаков<br />
+      <select>
+        <option
+          name="list"
+          size="4"
+          multiple
+          value=""
+        >
+          нулем сыт не будешь
+        </option>
+        <option
+          name="list"
+          size="4"
+          multiple
+          value="1"
+        >
+          раз
+        </option>
+        <option
+          name="list"
+          size="4"
+          multiple
+          value="2"
+        >
+          два
+        </option>
+        <option
+          name="list"
+          size="4"
+          multiple
+          value="3"
+        >
+          три
+        </option>
+      </select>
+      <input
+        type="submit"
+        value="Заказать"
+      />
+    </form>
+  </body>
+</html>

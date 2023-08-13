@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+.conteiner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #000;
+}
+
+.header__wrapper {
+    height: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__link:last-child {
+    /* Последний элемент - вывод навигация ушла чуть правее */
+    text-align: right;
+}
+.nav {
+    display: flex;
+}
+
+.nav__link {
+    margin-right: 35px;
+    color: white; /* Цвет текста */
+    text-transform: uppercase; /* С ЗАГЛАВНОЙ БУКВЫ */
+    text-decoration: none; /* подчеркивание: убираем */
+    font-weight: 600;
+}
+.nav__link:last-child {
+    /* Последний элемент - вывод навигация ушла чуть правее */
+    margin-right: 0;
+}
+
+.header__lng {
+    display: flex;
+}
+
+.header__lng-link {
+    margin-right: 8px;
+    color: #b7b7b7;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.header__lng-link:last-child {
+    margin-right: 0;
+}
+
+.header__lng-link.active {
+    color: #fff;
+}
