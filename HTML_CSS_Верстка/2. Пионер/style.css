@@ -21,7 +21,6 @@ body {
 .none {
   display: none !important;
 }
-/* Непонятно нужно или нет */
 .site-container {
   padding-top: 32px;
   display: flex;
@@ -173,6 +172,9 @@ body {
 
 /* ======================================  MAIN  ====================================== */
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 .hero-section {
   width: 1180px;
@@ -187,6 +189,7 @@ body {
 .hero-title {
   width: 580px;
 
+  padding-bottom: 32px;
   margin: 0;
 
   color: var(--dark, #333);
@@ -254,26 +257,66 @@ body {
   width: 1180px;
   height: 985px;
 }
+
+.product-title {
+  color: var(--dark, #333);
+  font-family: Source Sans 3;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2; /* 57.6px */
+  padding-bottom: 32px;
+}
 .product-list {
   display: grid;
+  grid-template-columns: 32% 32% 32%;
   gap: 20px;
   list-style: none;
-  grid-template-columns: 32% 32% 32%;
 }
 
 .product-item {
   box-sizing: border-box;
 }
-.product-card {
-  width: 380px;
-height: 435px;
-flex-shrink: 0;
-}
-.product-card a {
+.product-item a {
   text-decoration: none; /* Убирает нижнее подчеркивание */
   color: var(--accent, #607ce6);
   font-size: 20px;
   font-weight: 400;
   line-height: 1.2; /* 24px */
+}
+.products-card__image {
+  border-style: none;
+}
+.product-card * {
+  /* margin-left: 24px; */
+  background-color: cadetblue;
+}
+.card-link {
+  background-color: brown;
+}
+.product-card {
+  width: 380px;
+  height: 435px;
+  flex-shrink: 0;
+  background: var(--light-gray, #f5f5f5);
+
+  background-color: burlywood;
+}
+.product-card img {
+}
+.product-card h3 {
+  color: var(--dark, #333);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2; /* 33.6px */
+  padding-top: 107px;
+}
+
+.product-card a img {
+  margin-left: 8px;
+}
+.card-link img{
+  
+  padding-right: 156px;
+  padding-top: 32px;
 }
 /* ======================================  MAIN  ====================================== */
