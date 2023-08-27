@@ -51,13 +51,14 @@ img{
   text-align: center;
   color: #fff;
   margin-bottom: 25px;
+  letter-spacing: 2.2px;
 }
 
 .header-subtitle {
   font-weight: 700;
   font-size: 16px;
   line-height: 150%; /* 24px */
-  letter-spacing: 1.2px;
+  letter-spacing: 2.2px;
   text-transform: uppercase; /* Перевод всего текста в верхний регистр, т.е. заглавные буквы */
   text-align: center;
   color: #fff;
@@ -167,7 +168,7 @@ img{
 }
 
 .footer-col {
-  flex-grow: 1;
+  flex-grow: 1; 
   max-width: 350px;
 }
 

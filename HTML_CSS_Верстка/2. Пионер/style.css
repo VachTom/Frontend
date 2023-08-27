@@ -4,18 +4,23 @@
   padding: 0;
 }
 body {
-  /* background-color: beige; */
-  margin: 0;
   font-family: "Source Sans 3", sans-serif;
   font-size: 16px;
   font-style: normal;
   color: var(--dark, #333);
-
   width: auto;
   height: 100vh;
-
   min-width: 320px;
   min-height: 100%;
+}
+
+.container {
+  max-width: 1180px; /* Прописываем максимальную ширину для мобилки, если тел размер будет сужатся. Если монитор будет намного больше он остановаится до этой цифры которой указали */
+  margin-left: auto; /* Данные свойства автоматически выравнивают слева и справа. Они работают для блочной модели, по умолчанию элемент отображается как блок на стр. */
+  margin-right: auto;
+
+  /* padding-left: 15px;
+  padding-right: 15px; */
 }
 
 .none {
@@ -27,17 +32,12 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
+  margin: auto;
   gap: 80px;
+  overflow: hidden;
 }
 
 /* ====================================== HEADER ====================================== */
-
-.header__conteiner {
-  width: 1180px;
-  height: 113px;
-}
-
 .header-top {
   display: flex;
 }
@@ -253,11 +253,6 @@ body {
   margin: 0;
 }
 
-.product-container {
-  width: 1180px;
-  height: 985px;
-}
-
 .product-title {
   font-size: 48px;
   font-weight: 700;
@@ -341,19 +336,218 @@ body {
 .map-section {
   width: 1180px;
   height: 805px;
+  background-color: chocolate;
+  position: relative;
 }
 .map-title {
   font-size: 48px;
   font-weight: 700;
   line-height: 120%; /* 57.6px */
 }
+.map_totle {
+  margin-top: 32px;
+}
 .map-32 {
   width: 1151.895px;
   height: 678.84px;
-  display: inline-flex;
+  /* display: inline-flex; */
   height: 715px;
   padding: 3.917px 24.535px 32.243px 3.57px;
   align-items: center;
   flex-shrink: 0;
+
+  background-color: darkcyan;
 }
+.map-32 * {
+  position: absolute;
+}
+.Cental {
+  left: 348.95px;
+  right: 949.79px;
+  bottom: 217.65px;
+  left: 49.27px;
+  width: 180.933px;
+  height: 148.394px;
+  flex-shrink: 0;
+}
+.Southern {
+  left: 490.56px;
+  right: 1034.54px;
+  bottom: 65.47px;
+  left: 3.57px;
+  width: 141.892px;
+  height: 167.964px;
+  flex-shrink: 0;
+}
+.Northwestern {
+  width: 489.158px;
+  height: 319.179px;
+  flex-shrink: 0;
+  left: 106.03px;
+  right: 684.54px;
+  bottom: 289.79px;
+  left: 6.3px;
+}
+.FarEastern {
+  left: 3.92px;
+  right: 24.53px;
+  bottom: 59.99px;
+  left: 664.09px;
+}
+.Siberian {
+  /* left: px; right: px;bottom: px; left: px; */
+  left: 139.57px;
+  right: 313.95px;
+  bottom: 32.24px;
+  left: 389.04px;
+}
+.Urals {
+  left: 278.21px;
+  right: 644.49px;
+  bottom: 141.55px;
+  left: 268px;
+}
+/* left: px; right: px;bottom: px; left: px; */
+.map-point1 {
+  left: 506px;
+  right: 1013px;
+  bottom: 195px;
+  left: 71px;
+  color: var(--dark, #333);
+  font-family: Source Sans 3;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 14.4px */
+}
+
+/* ==================================================== */
+.news_container {
+  width: 1180px;
+  height: 568px;
+}
+.news-title {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 57.6px */
+}
+.news_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.news_card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+.news_card img {
+  width: 380px;
+  height: 251px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.news_card-dicrb {
+  width: 380px;
+  height: 227px;
+  flex-shrink: 0;
+  background: var(--light-gray, #f5f5f5);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.news_card-dicrb h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+  width: 348px;
+  margin: 16px 16px 83px 16px;
+}
+.card-dicrb-bottom {
+  display: flex;
+  gap: 183px;
+}
+
+.read_next {
+  color: var(--accent, #607ce6);
+  font-weight: 400;
+  line-height: 120%; /* 19.2px */
+  margin: 0 0 25px 16px;
+}
+.data {
+  color: var(--gray, #888);
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+
+  margin: 0 16px 24px 0;
+}
+
+.news_cards :nth-child(3) h3 {
+  margin-bottom: 111px;
+}
+
+.footer {
+  margin-top: 80px;
+  height: 361px;
+  background: var(--dark, #333);
+}
+.footer-top-button {
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px;
+  color: var(--light, #fff);
+}
+
+.footer-top {
+  display: flex;
+}
+
+.footer_logo {
+}
+.footer_logo-a {
+}
+.footer_logo-a img {
+  width: 180px;
+  height: 38px;
+  flex-shrink: 0;
+  fill: var(--light, #fff);
+}
+
+.footer_top-nav * {
+  flex-shrink: 0;
+  margin-bottom: 24px;
+}
+.footer_top-nav {
+  display: flex;
+  width: 343px;
+  height: 191px;
+  margin-left: 420px;
+  flex-shrink: 0;
+  font-weight: 400;
+  line-height: 120%; /* 19.2px */
+}
+.footer_nav {
+  color: var(--light, #fff);
+  text-decoration-line: none; /* text-decoration: none; Убирает нижнее подчеркивание */
+}
+.footer_top-nav2 {
+  margin: 0 57px 0 91px;
+}
+.footer_top-nav3 {
+  width: 155px;
+  height: 124px;
+  flex-shrink: 0;
+}
+.footer-button {
+  margin-top: 73px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--light, #fff);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
+
 /* ======================================  MAIN  ====================================== */
