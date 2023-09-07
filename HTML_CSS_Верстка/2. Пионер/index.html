@@ -9,6 +9,11 @@
     <title>MaxGraph New Site</title>
     <link
       rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
       href="style.css"
     />
 
@@ -24,6 +29,10 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Montserrat:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;600;700;900&family=Source+Sans+3:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="media.css"
       rel="stylesheet"
     />
   </head>
@@ -115,19 +124,16 @@
               </ul>
             </nav>
 
-            <button class="btn-call">
+            <a
+              href="#"
+              class="btn-call"
+            >
               <img
                 src="./img/1. header/phone 1.jpg"
                 alt="Телефон"
               />
               Перезвоните мне
-              <!-- <a
-                href="#"
-                ,
-                class="header-call"
-                ></a
-              > -->
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -136,7 +142,7 @@
         <section class="hero-section">
           <div class="container">
             <div class="hero-top">
-              <h1 class="hero-title">Российский завод силовых машин</h1>
+              <h2 class="hero-title">Российский завод силовых машин</h2>
               <p class="hero-discription">
                 научно-производственное предприятие, занимающееся разработкой и
                 производством силовых машин.
@@ -907,7 +913,7 @@
                   />
                   <a
                     href="#"
-                    class="present__link"
+                    class="present__link7"
                   >
                     <path
                       class="present__link__svg"
@@ -1165,65 +1171,85 @@
         <section class="news_section">
           <div class="container">
             <h2 class="news-title">Новости</h2>
+
+
             <div class="news_cards">
-              <div class="news_card">
-                <a
-                  href="#"
-                  class="news_card-link"
-                >
-                  <div class="news_card-grid">
-                    <img
-                      src="./img/2. main/5_news/1 Подверждение компетенции НПП Пионер.jpg"
-                      alt="Новость 1"
-                    />
-                    <h3 class="card_dicrb-h">
-                      НПП «ПИОНЕР» подтвердило свои компетенции в области
-                      консультирования и изготовления…
-                    </h3>
-                    <p class="card_dicrb-read">Читать далее</p>
-                    <p class="card_dicrb-data">20.07.2020</p>
-                  </div></a
-                >
-              </div>
-
-              <div class="news_card">
-                <a
-                  href="#"
-                  class="news_card-link"
-                >
-                  <div class="news_card-grid">
-                    <img
-                      src="./img/2. main/5_news/2 Поздравляем с праздником.jpg"
-                      alt="Новость 2"
-                    />
-                    <h3 class="card_dicrb-h">
-                      Поздравляем коллектив регионального представительства
-                      «ПИОНЕР» с праздником!
-                    </h3>
-                    <p class="card_dicrb-read">Читать далее</p>
-                    <p class="card_dicrb-data">18.07.2020</p>
-                  </div></a
-                >
-              </div>
-
-              <div class="news_card">
-                <a
-                  href="#"
-                  class="news_card-link"
-                >
-                  <div class="news_card-grid">
-                    <img
-                      src="./img/2. main/5_news/3 Перенос сроков проведения работ.jpg"
-                      alt="Новость 3"
-                    />
-                    <h3 class="card_dicrb-h">
-                      Перенос сроков проведения запланированных работ в 2020
-                      году
-                    </h3>
-                    <p class="card_dicrb-read">Читать далее</p>
-                    <p class="card_dicrb-data">20.06.2020</p>
-                  </div></a
-                >
+              <div class="slider">
+                <div class="news_card">
+                  <a
+                    href="#"
+                    class="news_card-link"
+                  >
+                    <div class="news_card-grid">
+                      <img
+                        src="./img/2. main/5_news/1 Подверждение компетенции НПП Пионер.jpg"
+                        alt="Новость 1"
+                      />
+                      <h3 class="card_dicrb-h">
+                        НПП «ПИОНЕР» подтвердило свои компетенции в области
+                        консультирования и изготовления…
+                      </h3>
+                      <p class="card_dicrb-read">Читать далее</p>
+                      <p class="card_dicrb-data">20.07.2020</p>
+                    </div></a
+                  >
+                </div>
+                <div class="news_card">
+                  <a
+                    href="#"
+                    class="news_card-link"
+                  >
+                    <div class="news_card-grid">
+                      <img
+                        src="./img/2. main/5_news/2 Поздравляем с праздником.jpg"
+                        alt="Новость 2"
+                      />
+                      <h3 class="card_dicrb-h">
+                        Поздравляем коллектив регионального представительства
+                        «ПИОНЕР» с праздником!
+                      </h3>
+                      <p class="card_dicrb-read">Читать далее</p>
+                      <p class="card_dicrb-data">18.07.2020</p>
+                    </div></a
+                  >
+                </div>
+                <div class="news_card">
+                  <a
+                    href="#"
+                    class="news_card-link"
+                  >
+                    <div class="news_card-grid">
+                      <img
+                        src="./img/2. main/5_news/3 Перенос сроков проведения работ.jpg"
+                        alt="Новость 3"
+                      />
+                      <h3 class="card_dicrb-h">
+                        Перенос сроков проведения запланированных работ в 2020
+                        году
+                      </h3>
+                      <p class="card_dicrb-read">Читать далее</p>
+                      <p class="card_dicrb-data">20.06.2020</p>
+                    </div></a
+                  >
+                </div>     <div class="news_card">
+                  <a
+                    href="#"
+                    class="news_card-link"
+                  >
+                    <div class="news_card-grid">
+                      <img
+                        src="./img/2. main/5_news/3 Перенос сроков проведения работ.jpg"
+                        alt="Новость 3"
+                      />
+                      <h3 class="card_dicrb-h">
+                        Перенос сроков проведения запланированных работ в 2020
+                        году
+                      </h3>
+                      <p class="card_dicrb-read">Читать далее</p>
+                      <p class="card_dicrb-data">20.06.2020</p>
+                    </div></a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -1346,5 +1372,15 @@
         </div>
       </div>
     </footer>
+
+    <div class="wrapper">
+      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+      <script src="js/slick.min.js"></script>
+      <script src="js/script.js"></script>
+      <!-- <script
+        type="text/javascript"
+        src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      ></script> -->
+    </div>
   </body>
 </html>
