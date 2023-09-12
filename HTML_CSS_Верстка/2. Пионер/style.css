@@ -20,7 +20,6 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-
 }
 
 .none {
@@ -246,7 +245,6 @@ body {
 .about-discription {
   margin: 0;
   width: 580px;
-  /* height: 94px; */
   flex-shrink: 0;
   justify-content: center;
 
@@ -254,8 +252,16 @@ body {
   font-weight: 400;
   line-height: 1.4; /* 19.2px */
 }
+.about-top > p:nth-child(3) {
+  margin: 0;
+  margin-left: 14px;
+}
 .about-top > img:nth-child(5) {
   margin: 0;
+}
+.about-top > img:nth-child(6) {
+  margin: 0;
+  margin-left: 14px;
 }
 
 .product-title {
@@ -532,10 +538,6 @@ body {
 }
 
 /* ==================================================== */
-.news_section {  
-
-}
-
 .news_container {
   max-width: 1180px;
   height: 568px;
@@ -550,21 +552,21 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   flex-shrink: 0;
+  gap: 20px;
 }
-.news_cards *{
-  
+.news_cards .news_card {
 }
 
 .news_card {
-  flex-shrink: 0;
+  width: 380px;
   margin-top: 32px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .news_card-link {
-  max-width: 380px;
+  width: 380px;
   text-decoration: none;
   color: var(--dark, #333);
-/* margin: 0; */
 }
 
 .news_card-grid {
@@ -574,7 +576,6 @@ body {
   background: var(--light-gray, #f5f5f5);
   transition: background 0.25s;
   transition: transform 0.2s ease-in; /* что? когда? и как? */
-  /* margin: 0; */
 }
 .news_card-grid:hover {
   background: var(--third, #d9d9d9);
@@ -586,6 +587,12 @@ body {
 }
 .news_card-grid > :nth-child(2) {
   grid-column: 1/-1;
+}
+.news_cards :nth-child(6) .card_dicrb-h {/* ИЗ-ЗА СЛАЙДЕРА НЕСКОЛЬКО ЭЛЕМЕНТОВ ПЕРЕСТАЛИ ДОЛЖНЫМ ОБРАЗОМ ФУНКЦИОНИРОВАТЬ, Я ОЧЕНЬ ДОЛГО МУЧАЛСЯ С ПОИСКОМ НУЖНОГО ЭЛЕМЕНТА  */
+  padding-bottom: 28px;
+}
+.news_cards :nth-child(7) .card_dicrb-h {
+  padding-bottom: 28px;
 }
 
 .news_card img {
@@ -613,108 +620,111 @@ body {
   color: var(--gray, #888);
   font-weight: 400;
   line-height: 140%; /* 22.4px */
-
   margin: 0 16px 24px 100px;
 }
 
-/* .card:last-child,
-.card:nth-last-child(2) */
-
-/* .news_cards :nth-child() {
-  padding-bottom: 111px;
-} */
-/* .news_cards > :nth-child(4) h3 {
-  padding-bottom: 111px;
-} */
-
-
 /* ==================================================== */
-
-.slider{  
+.slider {
   position: relative;
 }
 /* Слайдер */
-.slick-slider{}
+.slick-slider {
+  margin-left: -16px;
+}
+
 /* Слайдер запущен */
-.slick-slider.slick-initialized{}
+.slick-slider.slick-initialized {
+}
 /* Слайдер с точками */
-.slick-slider.slick-dotted{}
+.slick-slider.slick-dotted {
+}
 /* Ограничивающая оболочка */
 .slick-list {
   overflow: hidden;
 }
 /* Лента слайдов */
-.slick-track{
-  max-width: 380px;
-  display: flex;
+.slick-track {
+  width: 380px;
   align-items: flex-start;
 }
+
+
 /* Слайд */
-.slick-slide{}
+.slick-slide {
+  margin-left: 16px;
+}
+
 /* Слайд активный (показывается) */
-.slick-slide.slick-active{}
+.slick-slide.slick-active {
+}
 /* Слайд основной */
-.slick-slide.slick-current{}
+.slick-slide.slick-current {
+}
 /* Слайд по центру */
-.slick-slide.slick-center{}
+.slick-slide.slick-center {
+}
 /* Клонированный слайд */
-.slick-slide.slick-cloned{}
+.slick-slide.slick-cloned {
+}
 /* Стрелка */
-.slick-arrow{
+.slick-arrow {
+  position: absolute;
+  /* left: auto */
 }
 /* Стрелка влево */
-.slick-arrow.slick-prev{}
+.slick-arrow.slick-prev {
+}
 /* Стрелка вправо */
-.slick-arrow.slick-next{}
+.slick-arrow.slick-next {
+  /* margin-left: 5550px; */
+}
 /* Стрелка не активная */
-.slick-arrow.slick-disabled{}
+.slick-arrow.slick-disabled {
+}
 
-.slider .slick-arrow{
+.slider .slick-arrow {
   position: absolute;
   top: calc(50% - 15px);
   z-index: 10;
-  font-size: 0;  
+  font-size: 0;
   width: 60px;
   height: 60px;
   border: 0;
+
 }
-.slider .slick-arrow.slick-prev{
+.slider .slick-arrow.slick-prev {
   left: 15px;
-  background: url('./img/2.\ main/5_news/sl-arrow_l.svg') 0 0 / 56% no-repeat;
-
+  background: url("./img/2.\ main/5_news/sl-arrow_l.svg") 0 0 / 56% no-repeat;
 }
-.slider .slick-arrow.slick-next{
+.slider .slick-arrow.slick-next {
   right: 15px;
-  background: url('./img/2.\ main/5_news/sl-arrow_r.svg') 0 0 / 56% no-repeat;
-
-} 
+  background: url("./img/2.\ main/5_news/sl-arrow_r.svg") 0 0 / 56% no-repeat;
+}
 /* Точки (булиты) */
-.slider .slick-dots{
+.slider .slick-dots {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.slider .slick-dots li{
+.slider .slick-dots li {
   list-style: none;
   margin: 0 10px;
 }
 /* Элемент точки */
-.slider .slick-dots li button{
+.slider .slick-dots li button {
   border: 0;
   font-size: 0;
   background: var(--third, #d9d9d9);
   width: 12px;
   height: 10px;
-  border-radius: 40%;  cursor: pointer;
-
+  border-radius: 40%;
+  cursor: pointer;
 }
 /* Активная точка */
-.slider .slick-dots li.slick-active button{
+.slider .slick-dots li.slick-active button {
   background-color: #888;
 }
-
-
 
 /* ==================================================== */
 .footer {
