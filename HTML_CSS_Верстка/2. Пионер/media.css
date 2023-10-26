@@ -1,154 +1,72 @@
 /* ************************* Медиа запрос: для экранов с шириной до 1140px ************************* */
-@media (max-width:1140px){
-  
-}
-
+/* @media (max-width: 1190px) {
+  .header-nav-ul {
+    display: block;
+    align-items: flex-start;
+    gap: 10px;
+  }
+} */
 
 /* ************************* Медиа запрос: для экранов с шириной до 760px ************************* */
-@media (max-width:1025px){
-
-}
-
-
-/* ************************* Медиа запрос: для экранов с шириной до 760px ************************* */
-@media (max-width:760px){
-  
-}
-
-
-
-
-/* ************************* Медиа запрос: для экранов с шириной до 760px ************************* */
-@media (max-width:760px){
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1140px) {
-  .card {
-    width: calc(
-      50% - 15px
-    ); /* Свойство cals меняет размер именно блока, но не картинки */
-  } /* Чтобы поменять размер картинки в зависимости от разрешения экрана в style.css ставим в начале такую команду: img{max-width: 100%;} */
-
-  .footer {
-    padding-top: 40px;
-    padding-bottom: 60px;
+/* @media (max-width: 1025px) {
+  .header-burger {
+    position: absolute;
+    top: 37px;
+    right: 15px;
+    display: block;
+  }
+  .header-email,
+  .header-phone,
+  .btn-call,
+  .header-nav-ul {
+    display: none;
+  }
+  .header-line {
+    display: none;
   }
 
-  .footer-row {
-    flex-direction: column-reverse; /* Переносит все в колонны с обратным порядком! */
-    align-items: center; /* Выравнивание по гор оси Y, для оси X - justify-content */
-    text-align: center;
-  }
-  .footer-col {
-    margin-bottom: 50px; /* Этот метот footer-col присуствует везде */
-  }
-
-  .footer-col:first-child {
-    margin: 0; /* Последний элемент задаем с нулем, но есть загвостка последний элеменет тут первый поэтому ставим не last-child, a first-child */
-  }
-}
-
-/* ************************* Медиа запрос: для экранов с шириной до 760px *************************  */
-@media (max-width: 760px) {
-  /* -------- Header ---------------------------------------- */
-  .header-title {
-    font-size: 32px; /* Уменьшение заголовков */
-  }
-  .header-subtitle {
-    font-size: 14px; /* Уменьшение подзаголовков */
-  }
-  /* -------- Header ---------------------------------------- */
-
-  /* -------- Portfolio ------------------------------------- */
-  .portfolio {
-    padding-top: 40px; /* Уменьшение отступов */
-    padding-bottom: 60px;
-  }
-  .portfolio-header {
-    font-size: 32px; /* Уменьшение заголовков */
-    margin-bottom: 30px;
-  }
-  .portfolio-card-wrapper {
-    justify-content: center; /* По центру */
-  }
-  .card {
-    max-width: 530px;
-    width: 100%; /* в один ряд */
-  }
-  .card-link {
-    padding: 15px; /* Уменьшение отступов названий в карточке */
-  }
-  .card:nth-last-child(2) {
-    margin-bottom: 30px; /* Уменьшение отступа в предпоследней карточке */
-  }
-  .card-img {
-    margin-bottom: 10px;
-  }
-  .card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .card p {
-    font-size: 14px;
-  }
-  /* -------- Portfolio ------------------------------------- */
-
-  /* -------- Fotter ---------------------------------------- */
-  .footer-copyright-name {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  .footer-copyright p {
-    font-size: 14px;
-  }
-  .footer-icons p {
-    font-size: 14px;
-  }
-  .footer-contacts p {
-    font-size: 14px;
+  .header-nav-media_div{
+    left: 0;
+    right: 0;
     margin: 0;
-    margin-top: 15px;
-  }
-  /* -------- Fotter ---------------------------------------- */
+    width: 300px;
+    height: 700px;
+    flex-shrink: 0;
+    background-color:#fff;
+    /* Свойство тени для блока */
+    /* 2 px - это гор отступ справа, 0px - это верт отступ снизу, 15рх радиус размытия тени */
+    /* rgba первые три цифры сам цвет, 4 цифра отвечает за прозрачность */
+    /* box-shadow: 2px 0px 15px 0px rgba(125, 125, 125, 0.35); */
+  /* } */
 
-  /* -------- Project ---------------------------------------- */
-  /* Для внутреней страницы */
-  .project {
-    padding: 40px 0 60px;
-  }
-  .project-header {  
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-  .project-img{
-    margin-bottom: 20px;
-  }
-  .project-description{
-    margin-bottom: 50px;
-  }
-  .project-button-back{
-    padding: 0 10px;
-    width: 100%;
-    max-width: 320px;
-  }
-  /* -------- Project ---------------------------------------- */
+  /* .header-nav-ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding-left: 28px;
+  } 
 
+   .header-nav-ul *{
+    gap: 24px;
+  } 
+ } */
 
-/* Компб от 1140px. Мобилка до 760px. Самое низкое разрешение 320[x */
+/* ************************* Медиа запрос: для экранов с шириной до 760px ************************* */
+@media only screen and (max-width: 1210px) {
+  .container-site{
+    max-width: 992px
+  }
 }
+
+@media (max-width: 992px) {
+  .container-site{
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-site{
+    max-width: none;
+  }
+}
+
