@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JavaScript работа с DOM</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <a href="http://webcademy.ru" target="_blank">
+            <img
+                src="http://webcademy.ru/img/logo/logo.svg"
+                alt="Логотип"
+                class="logo"
+            />
+        </a>
+
+        <hr />
+
+        <h1 id="top-header">Подключение</h1>
+
+        <button id="button">Кнопка</button>
+
+        <hr />
+
+        <h1 id="top-header-2">
+            JavaScript - <strong>работа</strong> с DOM
+            <span class="hidden">Скрытый текст</span>
+        </h1>
+        <h2 class="header-2">Заголовок второго strongуровня</h2>
+        <p>Текст в абзаце.</p>
+        <h3 class="green">Заголовок 3-его уровня</h3>
+        <div class="block">
+            <p class="inner">Текст в абзаце который обернут в div.</p>
+            <p>Вторая строка. Второй абзац.</p>
+        </div>
+        <h3>Заголовок <span>3-го уровня</span></h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem rerum
+            porro obcaecati asperiores impedit quas eveniet quibusdam repellat
+            veniam odio sed cum est, minus, repellendus sit eum. Doloribus,
+            officiis, repellat!
+        </p>
+        <p>
+            Minima molestiae quidem fugit aspernatur quisquam laborum voluptates
+            perspiciatis placeat velit? Nam labore qui enim reprehenderit animi
+            id, laborum quos maxime error fugit maiores repudiandae quaerat
+            dignissimos sequi iste accusamus veniam fuga tenetur?
+        </p>
+        <ul>
+            <li class="green">Пункт списка №1</li>
+            <li id="second-list-item">Пункт списка №2</li>
+            <li>Пункт списка №3</li>
+            <li class="green">Пункт списка №4</li>
+        </ul>
+        <div class="block"></div>
+        <p class="green">Я отдельный тег с абзацем.</p>
+        <p id="one-more-p" class="paragraph">И еще один тег P.</p>
+        <p class="green">
+            Весь этот замечательный HTML код был написан от WebCademy.ru
+        </p>
+        <div class="block">
+            <h4>Изображения</h4>
+            <img
+                src="https://picsum.photos/300/150"
+                alt="Photo 1"
+                id="img01"
+                class="imgClass green"
+                name="SomeName"
+                data-location="forest"
+                data-size="medium"
+            />
+            <img
+                src="https://picsum.photos/300/150"
+                alt="Photo 2"
+                id="img02"
+                class="imgClas
+            />
+            <img
+                src="https://picsum.photos/300/150"
+                alt="Photo 3"
+                id="img03"
+                class="imgClass"
+            />
+            <p><a href="">Пустая ссылка</a></p>
+            <p><a href="#">Ссылка #</a></p>
+            <p><a href="http://google.com">Cсылка на google</a></p>
+            <p><a href="http://webcademy.ru">Ссылка на webcademy.ru</a></p>
+        </div>
+
+        <hr />
+
+        <h1 id="top-header">События</h1>
+
+        <button id="button-1">Сменить цвет</button>
+
+        <div id="testArea" class="test-box">
+            Наведи курсор
+        </div>
+
+        <h2>Форма</h2>
+
+        <form action="">
+            <p><b>Текст:</b> <span id="textHolder"></span></p>
+            <input type="text" id="inputName" />
+        </form>
+
+        <hr />
+
+        <h1 id="top-header">Работа с классами</h1>
+
+        <div id="testBox" class="testBox"></div>
+        <button id="addGreen">+ Зеленый фон</button>
+        <button id="removeGreen">- Зеленый фон</button>
+        <button id="toggleGreen">+/- Зеленый фон</button>
+        <button id="customCSS">Свой CSS</button>
+
+        <hr />
+
+        <h1 id="top-header">События</h1>
+
+        <h2>Форма и атрибуты</h2>
+
+        <form id="formSum">
+            <label for="numberOne">Число 1</label>
+            <input type="text" id="numberOne" />
+
+            <label for="numberTwo">Число 2</label>
+            <input type="text" id="numberTwo" />
+
+            <input type="submit" value="Сумма" />
+            <p>
+                <b>Сумма: <span id="sumResult" class="sumResult"></span></b>
+            </p>
+        </form>
+
+        <hr />
+
+        <h1 id="top-header">Работа с разметкой</h1>
+
+        <h2>Добавление текста и разметки на страницу</h2>
+
+        <div id="testBoxNew" class="testBox box-container"></div>
+
+        <p id="textNoWrap">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex aut
+            voluptate asperiores, accusamus nemo velit odio eligendi,
+            accusantium maxime recusandae perferendis at quibusdam ipsum ea,
+            eveniet consequuntur, enim commodi debitis.
+        </p>
+
+        <div class="blueBorder">
+            <div class="greenBorder" id="testGreenBlock">
+                Lorem ipsum dolor sit amet.
+                <p id="textInWrap">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
+                    aut voluptate asperiores, accusamus nemo velit odio
+                    eligendi, accusantium maxime recusandae perferendis at
+                    quibusdam ipsum ea, eveniet consequuntur, enim commodi
+                    debitis.
+                </p>
+                sdfsdfsdfsdf
+                <strong>56465456</strong>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi,
+                ex.
+            </div>
+        </div>
+
+        <h4>.empty()</h4>
+
+        <div id="toDeleteEmpty" class="greenBorder">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
+            eligendi et beatae! Distinctio quae atque deleniti iusto aut nisi
+            dolorem suscipit voluptate repellendus labore molestiae amet velit,
+            pariatur tempore est?
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Incidunt omnis fuga inventore sapiente quo tempora deleniti
+                dignissimos, consequatur facere eaque possimus similique quod
+                aspernatur, maxime tempore error repellat eligendi aut.
+            </p>
+        </div>
+
+        <h4>.remove()</h4>
+
+        <div id="toDeleteRemove" class="pinkBorder">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis,
+            possimus. Sunt dolorum illum laborum earum iusto itaque blanditiis
+            necessitatibus, aliquam eos in. Ipsa velit repudiandae, odio
+            exercitationem sequi ab facere.
+        </div>
+
+        <hr />
+
+        <div class="greenBorder" id="divForElements">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            dolor, assumenda doloremque et consequatur laboriosam hic saepe unde
+            vel quod culpa? Laborum necessitatibus explicabo accusantium
+            corporis fugit nihil nostrum incidunt!
+        </div>
+
+        <template id="templateArticle">
+            <h1>Some title</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                natus temporibus repellendus possimus, id, ducimus debitis
+                perspiciatis, ad unde labore odit consequatur officiis molestiae
+                totam et quam quaerat reiciendis error!
+            </p>
+        </template>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        
+<!-- <script src="./main.js"></script> -->
+<!-- <script src="./1_this.js"></script> -->
+<script src="./main.js"></script>
+<!-- <script src="./3_массивы.js"></script> -->
+<!-- <script src="./4_объекты.js"></script> -->
+<!-- <script src="./4_2_Объекты_повыенная_сложность.js"></script> -->
+    </body>
+</html>

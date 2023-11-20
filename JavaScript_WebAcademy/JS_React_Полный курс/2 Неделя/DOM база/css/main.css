@@ -1,0 +1,154 @@
+body {
+    padding: 20px;
+}
+.logo {
+    height: 60px;
+}
+li {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-top: 75px;
+    margin-bottom: 75px;
+    border: none;
+    border-bottom: 1px solid rgb(213, 225, 230);
+}
+
+.green {
+    color: #43a047;
+}
+.selected {
+    border: 3px solid #d81b60;
+    padding: 5px;
+    margin: 2px 0px;
+    /*display: inline-block;*/
+}
+
+.button {
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #1976d2;
+    text-decoration: none;
+    color: #1976d2;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #2196f3;
+}
+
+.button:active {
+    background-color: #0d47a1;
+    color: #bbdefb;
+}
+
+.pinkColor {
+    color: #d81b60;
+}
+
+.test-box {
+    width: 400px;
+    display: block;
+    background-color: #8d6e63;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.orangeBg {
+    background-color: #f57c00;
+}
+
+form {
+    background-color: #eceff1;
+    padding: 20px 35px;
+    margin-bottom: 35px;
+    display: block;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    width: 200px;
+    height: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 5px;
+    border: 2px solid #b0bec5;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="text"]:active {
+    outline: none;
+}
+
+.focus {
+    border: 2px solid #1565c0 !important;
+    box-shadow: 0px 1px 25px #64b5f6;
+}
+
+.sumResult {
+    color: #43a047;
+}
+
+.box-container {
+    border: 5px solid #eceff1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.testBox {
+    position: relative;
+    margin-top: 35px;
+}
+
+.testBox:before {
+    content: "testBox";
+    display: block;
+    position: absolute;
+    left: -5px;
+    top: -30px;
+    background-color: #eceff1;
+    padding: 5px 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.pinkBorder {
+    border: 5px solid #e91e63;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.greenBorder {
+    border: 5px solid #4caf50;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.blueBorder {
+    border: 5px solid #2196f3;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.imgClass {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+#textInWrap {
+    border: 5px solid #777;
+}

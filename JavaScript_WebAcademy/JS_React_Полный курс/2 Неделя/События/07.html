@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JavaScript работа с DOM</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+        <a href="http://webcademy.ru" target="_blank">
+            <img
+                src="http://webcademy.ru/img/logo/logo.svg"
+                alt="Логотип"
+                class="logo"
+            />
+        </a>
+
+        <h1>События</h1>
+
+        <button id="button1" onclick = "alert('Hello!');">
+            Кнопка onclick
+        </button>
+        <button id="button2" onclick = "soFink()">
+            Кнопка onclick function name
+        </button>
+        <button
+            id="button3"
+            class="someClass gree black"
+            data-location="street"
+            data-price="100"
+        >
+            Кнопка addEventListener
+        </button>
+
+        <hr />
+
+        <h1>Всплытие события</h1>
+
+        <div class="block-container-1">
+            <div class="block-container-2">
+                <div class="block-container-3">
+                    <button id="buttonInside">Кнопка</button>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <h1 id="top-header">События</h1>
+
+        <div class="block-container-3" style="display: inline-block;" id="forDoubleClick">Двойной клик</div>
+
+        <div id="mouseTest" class="test-box" style="width: 255px; height: 255px;">
+            Наведи курсор<br><br>
+            <div class="block-container-2">Блок внутри</div>
+        </div>
+
+        <hr />
+
+        <h2>Форма</h2>
+
+        <form action="" class="flex-row">
+            <div>
+            <p><b>Текст:</b> <span id="textHolder"></span></p>
+            <input type="text" id="inputName" />
+            </div>
+            <div>
+                <p><b>Значение:</b></p>
+                <p><strong id="valueFromForm"></strong></p>
+            </div>
+        </form>
+
+        <hr />
+
+        <h2>Калькулятор</h2>
+
+        <form id="formSum" action="">
+            <label for="numberOne">Число 1</label>
+            <input type="number" id="numberOne" class="input" />
+
+            <label for="numberTwo">Число 2</label>
+            <input type="number" id="numberTwo" class="input" />
+
+            <select name="" id="calcAction">
+                <option value="plus">Сложить</option>
+                <option value="minus">Вычесть</option>
+                <option value="multiply">Умножить</option>
+                <option value="devide">Разделить</option>
+            </select>
+
+            <input type="submit" value="Отправить" />
+            <input type="reset" value="Сбросить" />
+            <p>
+                <b>Результат: <span id="calcResult" class="sumResult"></span></b>
+            </p>
+        </form>
+
+
+        <script src="js/07.js"></script>
+    </body>
+</html>
