@@ -1,0 +1,64 @@
+body {
+    padding: 50px;
+    font-family: sans-serif;
+}
+
+.logo {
+    height: 60px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.imgHolder {
+    background-image: url("//webcademy.ru/files/js2020/solaris/text-solaris.png");
+    background-position: center 50px;
+    background-repeat: no-repeat;
+}
+
+.colorsSelector {
+    text-align: center;
+}
+
+.colorItem {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #999;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.colorItem--active {
+    box-shadow: 0px 0px 0px 5px #fe9b07;
+}
+
+.colorBlue {
+    background-color: #325488;
+}
+
+.colorWhite {
+    background-color: #cfcfcf;
+}
+
+.colorRed {
+    background-color: #c64040;
+}
+
+.colorBlack {
+    background-color: #08090b;
+}
+
+.colorWhitePure {
+    background-color: #f0f0f0;
+}
+
+.colorOrange {
+    background-color: #d87c5a;
+}
+
+.colorGraphite {
+    background-color: #7f7f7f;
+}

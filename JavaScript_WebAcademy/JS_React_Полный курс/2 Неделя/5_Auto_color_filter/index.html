@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Выбор цвета для авто</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body class="text-center">
+		<a href="https://webcademy.ru" target="_blank">
+			<img src="https://webcademy.ru/img/logo/logo.svg" alt="Логотип" class="logo" />
+		</a>
+
+		<h1 id="top-header">JS работа с DOM</h1>
+
+		<h2>Изображение и атрибуты</h2>
+
+		<div id="imgHolder" class="imgHolder">
+			<img id="imgSrc" src="https://webcademy.ru/files/js2020/solaris/black.png" alt="Автомобиль" />
+		</div>
+
+		<!-- Другие изображения автомобиля -->
+		<!-- https://webcademy.ru/files/js2020/solaris/black.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/blue.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/graphite.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/orange.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/red.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/white.png -->
+		<!-- https://webcademy.ru/files/js2020/solaris/white-pure.png -->
+
+		<div id="colorsSelectors" class="colorsSelector">
+			<div class="colorItem colorBlue" data-color="blue.png"></div>
+			<div class="colorItem colorWhite" data-color="white.png"></div>
+			<div class="colorItem colorRed" data-color="red.png"></div>
+			<div class="colorItem colorBlack colorItem--active" data-color="black.png"></div>
+			<div class="colorItem colorWhitePure" data-color="white-pure.png"></div>
+			<div class="colorItem colorOrange" data-color="orange.png"></div>
+			<div class="colorItem colorGraphite" data-color="graphite.png"></div>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
