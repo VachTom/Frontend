@@ -2,9 +2,15 @@ const cards = document.querySelectorAll(".plate");
 let currentIndex = 0;
 let currentCards = 0;
 
+cards.forEach(function (item) {
+  item.classList.add("none");
+});
+
+cards[currentIndex].classList.remove("none");
+cards[currentIndex].classList.add("visible");
+
 // когда мы описываем селектор по атрибутам мы используем [] скобки
 cards[0].querySelector("[data-nav='prev']").remove();
-cards[0].classList.add("visible");
 
 window.addEventListener("click", function (e) {
   if (e.target.closest('[data-nav="next"]')) {
@@ -18,11 +24,21 @@ window.addEventListener("click", function (e) {
     if (result) {
       updateProgressBar("next");
       setTimeout(function () {
-        cards[currentIndex].classList.remove("visible");
-        currentIndex++;
-        cards[currentIndex].classList.add("visible");
+        cards[currentIndex].classList.remove("visible"); // Скрываем текущую с аниманицей
+        setTimeout(function () {
+          cards[currentIndex].classList.add("none"); // Скрываем всё
+
+          // Показываем следующую, готовим к анимации
+          currentIndex++;
+          cards[currentIndex].classList.remove("none");
+          setTimeout(function () {
+            cards[currentIndex].classList.add("visible");
+          }, 200);
+        }, 400);
+        // cards[currentIndex].classList.add("visible");
+
         answerWrapper.classList.remove("required");
-      }, 300);
+      }, 400);
     } else {
       console.error("Выберите ответ!!!");
       answerWrapper.classList.add("required");
@@ -34,9 +50,16 @@ window.addEventListener("click", function (e) {
     updateProgressBar("prev");
     setTimeout(function () {
       cards[currentIndex].classList.remove("visible"); //Перемещение между карточками
-      currentIndex--;
-      cards[currentIndex].classList.add("visible");
-    }, 300);
+      setTimeout(function () {
+        cards[currentIndex].classList.add("none");
+
+        currentIndex--;
+        cards[currentIndex].classList.remove("none");
+        setTimeout(function () {
+          cards[currentIndex].classList.add("visible");
+        }, 200);
+      }, 400);
+    }, 400);
   }
 });
 
@@ -79,4 +102,24 @@ function updateProgressBar(direction = "start") {
     item.style.width = progress + "%";
   });
 }
-updateProgressBar();
+
+mask("#tel");
+const submitForm = document.querySelector("#submitForm");
+const inpPhone = document.querySelector("#tel");
+
+submitForm.onclick = function () {
+  if (inpPhone.value === "+" || inpPhone.value.length < 6) {
+    inpPhone.value = "";
+  }
+};
+
+const checkBoxPolicy = document.querySelector("#policy");
+checkBoxPolicy.addEventListener("focus", function (e) {
+  console.log("focuuus");
+  this.closest("label").classList.add("hovered");
+});
+checkBoxPolicy.addEventListener("blur", function () {
+  // Прослушка выхода - blur
+  console.log("blur");
+  checkBoxPolicy.closest("label").classList.remove("hovered");
+});
