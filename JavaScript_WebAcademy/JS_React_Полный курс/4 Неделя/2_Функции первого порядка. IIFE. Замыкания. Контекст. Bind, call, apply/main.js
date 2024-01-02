@@ -180,7 +180,6 @@ john.sayHello.call(mary, "friendle", "вечера")
 // 
 john.sayHello.apply(mary, ["formal", "утро"])
 
-
 /*
 var john = {
     name: "Джон",
