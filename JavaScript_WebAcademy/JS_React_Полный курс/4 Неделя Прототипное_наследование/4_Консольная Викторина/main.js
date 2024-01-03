@@ -1,81 +1,102 @@
-// function Question(question) {
-//   function work() {
-
-//   }
-
-//   var question = {
-//     description: "Тернарный оператор это ...",
-//     answers: [sadsad, asd, dsa],
-//     right_answer: answers[dsa],
-//   };
-// }
-
-// function (random,) {
-
-// }
-
 var Question = function (question, answers, right_answer) {
   this.question = question;
   this.answers = answers;
   this.right_answer = right_answer;
-
-  this.print = function printQuestion() {
-    var questionsArray = [{question, answers, right_answer}];
-    var random = Math.floor(Math.random() * questionsArray.length);
-    console.log(`${random + 1} Вопрос: `, questionsArray[random].question);
-
-    for (let i = 0; i < answers.length; i++) {
-      console.log(answers[i])
-    }
-    console.log("\n")
-  };
 };
 
-var quest1 = new Question(
-  "Тернарный оператор это ...?",
-  ["Условие if/else", "Работа с циклом", "Объект"],
-  0
-);
-var quest2 = new Question(
-  "Выбрать основную функцию IIFE:",
-  [
-    "Скрытие от внешней области видимости.",
-    "Создание собственной области видимости.",
-    "Cкрытие от внешней области видимости и создание собственной области видимостикт.",
-  ],
-  2
-);
+(function printArr(arr) {
+  var questionsArray = [
+    // в один массив
+    (quest1 = new Question(
+      "Тернарный оператор это ...?",
+      ["Условие if/else", "Работа с циклом", "Объект"],
+      0
+    )),
+    (quest2 = new Question(
+      "Выбрать основную функцию IIFE:",
+      [
+        "Скрытие от внешней области видимости.",
+        "Создание собственной области видимости.",
+        "Cкрытие от внешней области видимости и создание собственной области видимостикт.",
+      ],
+      2
+    )),
+    (quest3 = new Question(
+      "Для чего используется паттерн-модуль ?",
+      [
+        "Для ограничения области видимости переменных.",
+        "Для соединения с глобальной облости видимости.",
+        "Для ограничения области видимости переменных и объединения кода в единный модуль.",
+      ],
+      2
+    )),
+    (quest4 = new Question(
+      "Верно ли следующее утверждение и к чему это приводит: Каждый объект в JS имеет свойство Prototype",
+      [
+        "Неверно.",
+        "Верно, это не обеспечивает наследование в JS.",
+        "Верно, это обеспечивает наследование в JS.",
+      ],
+      2
+    )),
+  ];
 
-var quest3 = new Question(
-  "Для чего используется паттерн-модуль ?",
-  [
-    "Для ограничения области видимости переменных.",
-    "Для соединения с глобальной облости видимости.",
-    "Для ограничения области видимости переменных и объединения кода в единный модуль.",
-  ],
-  2
-);
+  var randomIndex = Math.floor(Math.random() * questionsArray.length); // рандомное число
+  console.log(
+    // Вывод вопроса
+    `\n${randomIndex + 1} Вопрос: `,
+    questionsArray[randomIndex].question
+  );
 
-var quest4 = new Question(
-  "Верно ли следующее утверждение и к чему это приводит: Каждый объект в JS имеет свойство Prototype",
-  [
-    "Неверно.",
-    "Верно, это не обеспечивает наследование в JS.",
-    "Верно, это обеспечивает наследование в JS.",
-  ],
-  2
-);
-
-var questions = [quest1, quest2, quest3, quest4]
-console.log(questions)
-quest1.print()
-quest2.print()
-quest3.print()
-quest4.print()
+  // Вывод ответов на вопрос
+  for (let i = 0; i < questionsArray.length - 1; i++) {
+    console.log(`${i + 1}. ${questionsArray[randomIndex].answers[i]}`);
+  }
+  var answer_right = questionsArray[randomIndex].right_answer + 1;
+  var answerUser = prompt("Введите номер верного ответа:");
 
 
-// var quest5 = new Question("", ["", "", ""]);
 
+  
+// Для счеткиа
+  function counterFn() {
+    var counter = 0;
+    return function (i) {
+      if (i) {
+        counter++;
+      }
+      return counter;
+    };
+  }
+
+  var numbCounter = counterFn();
+  numbCounter(true)
+
+
+
+// Условие
+  function ifs() {
+    if (
+      (answerUser != "exit") &
+      (answerUser != "Exit") &
+      (answerUser != null)
+    ) {
+      if (answerUser == answer_right) {
+        console.log(`\nПравильный ответ! Ваш счёт: ${numbCounter(true)}\n`);
+        printArr(questionsArray);
+      } else {
+        console.log(
+          `\nОтвет неверный. Попробуйте ещё раз! Ваш счёт: ${numbCounter(
+            false
+          )}\n`
+        );
+        printArr(questionsArray);
+      }
+    } else return;
+  }
+
+  setTimeout(ifs, 800);
+})();
 /* 
 5 Вопрос: Конструкторы это ...?
 1) Экземепляры 
