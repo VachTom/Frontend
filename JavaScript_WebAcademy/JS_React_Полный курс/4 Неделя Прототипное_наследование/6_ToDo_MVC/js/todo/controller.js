@@ -1,3 +1,28 @@
 import Module from "./model.js";
+import View from "./view.js";
+
 const model = new Module();
-console.log(model)
+const view = new View(model.tasks);
+
+// 1. Добавление задачи
+view.elements.form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const newTasks = model.addTask(view.elements.input.value);
+  view.renderTask(newTasks);
+  view.clearInput();
+});
+
+// 2. Нажали на чекбокс
+view.elements.tasksList.addEventListener("click", function (e) {
+  console.log(e.target)
+  if (e.target.getAttribute("type") === "checkbox") {
+    
+  }
+})
+
+// model.addTask("asdasd");
+// model.addTask("d123123");
+// model.doneTask(model.tasks[0])
+// console.log(model)
+// view.renderTask(model.tasks[0])
+// view.renderTask(model.tasks[1])

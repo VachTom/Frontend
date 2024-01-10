@@ -1,25 +1,33 @@
 export default class Module {
   constructor() {
     this.tasks = [];
+    this.loadFromLocalStorage()
+  }
+
+  loadFromLocalStorage() {
+   const data = localStorage.getItem("tasks");
+  if (data) {
+    this.tasks = JSON.parse(data) 
+  }}
+
+  // Для сохранения в базе(хранилище) данных JSON, при каждом обновлении стр - добавляется в базу данные
+  saveToLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(this.tasks)); // сохранение и перенос в локалСторадж
   }
 
   addTask(text) {
-    this.tasks.push[text];
+    const newTask = {
+      status: "active",
+      text: text,
+    };
+    this.tasks.push(newTask);
+    return newTask
   }
   doneTask(task) {
     task.status = "done";
-    const newTask = {
-      text: text,
-      status: "active",
-    };
- this.tasks.push(newTask)
-   }
+  }
+  removeTask(task) {
+    const index = this.tasks.indexOf(task);
+    this.tasks.splice(index, 1);
+  }
 }
-// tasks = [
-//   {
-//     status: "active",
-//     text: "Заверстать стартовый шаблон",
-//   },
-//   {},
-//   {},
-// ];
