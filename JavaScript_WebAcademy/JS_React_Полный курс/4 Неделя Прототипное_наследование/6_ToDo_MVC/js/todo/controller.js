@@ -14,15 +14,20 @@ view.elements.form.addEventListener("submit", function (e) {
 
 // 2. Нажали на чекбокс
 view.elements.tasksList.addEventListener("click", function (e) {
-  console.log(e.target)
   if (e.target.getAttribute("type") === "checkbox") {
-    
+    const id = e.target.closest(".todo-item").dataset.id;
+    const task = model.findTask(id);
+    model.doneTask(task)
   }
-})
+});
 
-// model.addTask("asdasd");
 // model.addTask("d123123");
-// model.doneTask(model.tasks[0])
-// console.log(model)
-// view.renderTask(model.tasks[0])
-// view.renderTask(model.tasks[1])
+console.log(model.findTask(1));
+// parentElement - поднимается на верх по разметке
+// model.addTask("asdasd");
+// // model.doneTask(model.tasks[0])
+// // console.log(model)
+// // view.renderTask(model.tasks[0])
+// // view.renderTask(model.tasks[1])
+// model.removeTask(model.tasks[2])
+model.saveToLocalStorage();
