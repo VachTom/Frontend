@@ -28,6 +28,7 @@ export default class Module {
       text: text,
     };
     this.tasks.push(newTask);
+    this.saveToLocalStorage();
     return newTask;
   }
 
@@ -40,11 +41,18 @@ export default class Module {
     return task;
   }
 
-  doneTask(task) {
-    task.status = "done";
+  changeStatus(task) {
+    if (task.status === "active") {
+      task.status = "done";
+    } else {
+      task.status = "active";
+    }
+    this.saveToLocalStorage();
   }
   removeTask(task) {
     const index = this.tasks.indexOf(task);
     this.tasks.splice(index, 1);
+    this.saveToLocalStorage()
   }
+
 }

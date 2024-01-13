@@ -17,12 +17,19 @@ view.elements.tasksList.addEventListener("click", function (e) {
   if (e.target.getAttribute("type") === "checkbox") {
     const id = e.target.closest(".todo-item").dataset.id;
     const task = model.findTask(id);
-    model.doneTask(task)
+    model.changeStatus(task);
+    view.changeStatus(task);
+  }
+  if (e.target.hasAttribute("data-delete")) {
+    const id = e.target.closest('.todo-item').dataset.id
+    const task = model.findTask(id);
+    model.removeTask(task)
+    view.removeTask(task)
   }
 });
 
 // model.addTask("d123123");
-console.log(model.findTask(1));
+// console.log(model.findTask(1));
 // parentElement - поднимается на верх по разметке
 // model.addTask("asdasd");
 // // model.doneTask(model.tasks[0])
@@ -30,4 +37,4 @@ console.log(model.findTask(1));
 // // view.renderTask(model.tasks[0])
 // // view.renderTask(model.tasks[1])
 // model.removeTask(model.tasks[2])
-model.saveToLocalStorage();
+// model.saveToLocalStorage();
