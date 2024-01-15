@@ -8,8 +8,14 @@ const title = document.querySelector("#title");
 const value = document.querySelector("#value");
 const incomesList = document.querySelector("#incomes-list");
 const expensesList = document.querySelector("#expenses-list");
-const totalInc = document.querySelector("#total-income");
-const totalExp = document.querySelector("#total-expense");
+
+const budgetHTML = document.querySelector("#budget");
+const totalIncHTML = document.querySelector("#total-income");
+const totalExpHTML = document.querySelector("#total-expense");
+const percentHTML = document.querySelector("#expense-percents-wrapper");
+
+const monthEl = document.querySelector("#month");
+const yearEl = document.querySelector("#year");
 
 // Functions
 function insertTestData() {
@@ -35,37 +41,70 @@ function insertTestData() {
   title.value = randomData.title;
   value.value = randomData.value;
 }
+const priceFormatter = new Intl.NumberFormat("ru-RU", {
+  style: "currency",
+  currency: "RUB",
+  maximumFractionDigits: 0, // Кол-во значений после точки
+});
+function displayMonth() {
+  const now = new Date();
+  const year = now.getFullYear();
 
+  const timeFormatter = new Intl.DateTimeFormat("ru-RU", {
+    month: "long",
+  });
+  const month = timeFormatter.format(now);
+  console.log(month);
+  console.log(year);
+  monthEl.innerHTML = month;
+  yearEl.innerHTML = year;
+}
 function clearForm() {
   form.reset();
 }
 function totalCalcBudget() {
-  let totalIncom = budget.reduce(function (prev, item) {
+  var totalIncom = budget.reduce(function (prev, item) {
     if (item.type === "inc") {
       return prev + item.value;
     } else {
       return prev;
     }
   }, 0);
-  console.log("TotalInc:", totalIncom);
+  console.log("Inc:", totalIncom);
 
-  let totalExpen = budget.reduce(function (prev, item) {
+  var totalExpen = budget.reduce(function (prev, item) {
     if (item.type === "exp") {
       return prev + item.value;
     } else {
       return prev;
     }
   }, 0);
-  console.log("TotalExp:", totalExpen);
+  console.log("Exp:", totalExpen);
 
-  // const totalBudget = totalIncom - totalExpen;
-  // const expensePercents = Math.round((totalExpen * 100) / totalIncom);
+  var totalBudget = totalIncom - totalExpen;
+  console.log("TotalBudget:", totalBudget);
 
-  totalInc.insertAdjacentHTML("afterbegin", totalCalcBudget());
+  var expensePercents = 0;
+  if (totalIncom) {
+    expensePercents = Math.round((totalExpen * 100) / totalIncom);
+  }
+  console.log("%:", expensePercents);
 
-  totalExp.insertAdjacentHTML("afterbegin", totalCalcBudget());
+  budgetHTML.innerHTML = priceFormatter.format(totalBudget);
+  totalIncHTML.innerHTML = "+ " + priceFormatter.format(totalIncom);
+  totalExpHTML.innerHTML = "- " + priceFormatter.format(totalExpen);
+  if (expensePercents) {
+    var percHtml = `<div class="badge">${expensePercents}%</div>`;
+    percentHTML.innerHTML = percHtml;
+  } else {
+    percentHTML.innerHTML = "";
+  }
+
+  // totalInc.insertAdjacentHTML("afterbegin", totalCalcBudget());
+  // totalExp.insertAdjacentHTML("afterbegin", totalCalcBudget());
 }
 // Actions
+displayMonth();
 insertTestData();
 totalCalcBudget();
 form.addEventListener("submit", function (e) {
@@ -100,17 +139,21 @@ form.addEventListener("submit", function (e) {
     title: title.value.trim(),
     value: +value.value,
   };
-  console.log(record);
+  // console.log(record);
 
   // Добавляем запись в данные
   budget.push(record);
 
   // Отображаем Доход на странице
   if (record.type === "inc") {
-    const html = `<li data-id="${record.id}" class="budget-list__item item item--income">
+    const html = `<li data-id="${
+      record.id
+    }" class="budget-list__item item item--income">
                         <div class="item__title">${record.title}</div>
                         <div class="item__right">
-                            <div class="item__amount">+ ${record.value}</div>
+                            <div class="item__amount">+ ${priceFormatter.format(
+                              record.value
+                            )}</div>
                             <button class="item__remove">
                                 <img
                                     src="./img/circle-green.svg"
@@ -125,11 +168,13 @@ form.addEventListener("submit", function (e) {
 
   // Отображаем Расход на странице
   if (record.type === "exp") {
-    const html = `<li data-id="${record.id}" class="budget-list__item item item--expense">
+    const html = `<li data-id="${
+      record.id
+    }" class="budget-list__item item item--expense">
                         <div class="item__title">${record.title}</div>
                         <div class="item__right">
                             <div class="item__amount">
-                                - ${record.value}
+                                - ${priceFormatter.format(record.value)}
                             </div>
                             <button class="item__remove">
                                 <img src="./img/circle-red.svg" alt="delete" />
@@ -143,7 +188,7 @@ form.addEventListener("submit", function (e) {
   console.log(budget);
   clearForm();
   insertTestData();
-  // totalCalcBudget();
+  totalCalcBudget();
 });
 // УДАЛЕНИЕ НОВОЙ ЗАПИСИ
 document.body.addEventListener("click", function (e) {
