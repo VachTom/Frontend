@@ -57,6 +57,13 @@ function totalCalcBudget() {
     }
   }, 0);
   console.log("TotalExp:", totalExpen);
+
+  // const totalBudget = totalIncom - totalExpen;
+  // const expensePercents = Math.round((totalExpen * 100) / totalIncom);
+
+  totalInc.insertAdjacentHTML("afterbegin", totalCalcBudget());
+
+  totalExp.insertAdjacentHTML("afterbegin", totalCalcBudget());
 }
 // Actions
 insertTestData();
@@ -136,7 +143,7 @@ form.addEventListener("submit", function (e) {
   console.log(budget);
   clearForm();
   insertTestData();
-  totalCalcBudget();
+  // totalCalcBudget();
 });
 // УДАЛЕНИЕ НОВОЙ ЗАПИСИ
 document.body.addEventListener("click", function (e) {
