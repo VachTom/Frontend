@@ -7,9 +7,20 @@
 // 3. Дефолтный и обычный импорт одной строкой
 import UserClass, { printName as printUserNameFunc, printAge as printAgeFunc } from './user.js'
 
+// const userBob = new UserClass("Bob", 28);
+// console.log(userBob);
+
+// printUserNameFunc(userBob);
+
+// printAgeFunc(userBob);
+
+
+
+
+
 const userBob = new UserClass("Bob", 28);
-console.log(userBob);
+console.log(userBob)
+printUserNameFunc(userBob)
+printAgeFunc(userBob)
 
-printUserNameFunc(userBob);
-
-printAgeFunc(userBob);
+// import * as Func from "./user.js" // импортирует все функции которые могут быть в файле 

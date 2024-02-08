@@ -20,4 +20,6 @@ export function printAge(user) {
 // export default User;
 
 // 2. Экспорт дополнительных данных
-// export { printName, printAge }
+// export { printName, printAge }/*  */
+// var a = document.getElementById("#outer").firstChild
+// console.log(a)
