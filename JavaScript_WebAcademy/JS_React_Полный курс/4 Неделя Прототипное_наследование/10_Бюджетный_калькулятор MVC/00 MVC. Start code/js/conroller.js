@@ -2,80 +2,13 @@ import * as model from "./model.js";
 import * as view from "./view.js";
 
 // Functions
-function insertTestData() {
-  const testData = [
-    { type: "inc", title: "Фриланс", value: 1500 },
-    { type: "inc", title: "Зарплата", value: 2000 },
-    { type: "inc", title: "Бизнес", value: 2000 },
-    { type: "inc", title: "Рента", value: 1000 },
-    { type: "exp", title: "Продукты", value: 300 },
-    { type: "exp", title: "Кафе", value: 200 },
-    { type: "exp", title: "Транспорт", value: 200 },
-    { type: "exp", title: "Квартира", value: 500 },
-  ];
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-  const randomIndex = getRandomInt(testData.length);
-  const randomData = testData[randomIndex];
-  view.renderTestData(randomData);
-}
-
-function calcBudget() {
-  // Считаем общий доход
-  const totalIncome = budget.reduce(function (total, element) {
-    if (element.type === "inc") {
-      return total + element.value;
-    } else {
-      return total;
-    }
-  }, 0);
-  console.log("totalIncome", totalIncome);
-
-  // Считаем общий расход
-  const totalExpense = budget.reduce(function (total, element) {
-    if (element.type === "exp") {
-      return total + element.value;
-    } else {
-      return total;
-    }
-  }, 0);
-  console.log("totalExpense", totalExpense);
-
-  const totalBudget = totalIncome - totalExpense;
-  console.log("totalBudget", totalBudget);
-
-  let expensePercents = 0;
-  if (totalIncome) {
-    expensePercents = Math.round((totalExpense * 100) / totalIncome);
-  }
-  console.log("expensePercents", expensePercents);
-
-  const budgetSummary = {
-    totalIncome,
-    totalExpense,
-    totalBudget,
-    expensePercents,
-  };
-  view.renderBudget(budgetSummary);
-}
-
-function displayMonth() {
-  const now = new Date();
-  const year = now.getFullYear(); // 2023
-
-  const timeFormatter = new Intl.DateTimeFormat("ru-RU", { month: "long" });
-  const month = timeFormatter.format(now);
-
-  view.renderMonth(month, year);
-}
+view.renderTestData(model.getTestData());
+view.renderMonth(model.displayMonth());
 
 // Actions
-displayMonth();
-insertTestData();
-// calcBudget();
+view.renderTestData(model.getTestData());
+view.renderBudget(model.calcBudget()); // Посчитать бюджет
 
 // Добавление
 view.elements.form.addEventListener("submit", function (e) {
@@ -87,14 +20,12 @@ view.elements.form.addEventListener("submit", function (e) {
   const formData = view.getFormData();
   const record = model.createRecord(formData);
 
-  model.createRecord(formData);
   view.renderRecord(record);
 
-  // Посчитать бюджет
-  // calcBudget();
+  view.renderBudget(model.calcBudget()); // Посчитать бюджет
 
   view.clearForm();
-  insertTestData();
+  view.renderTestData(model.getTestData());
 });
 
 // Удаление
@@ -103,7 +34,6 @@ document.body.addEventListener("click", function (e) {
   if (e.target.closest("button.item__remove")) {
     const id = view.removeRecord(e);
     model.deleteRecord(id);
-    // Посчитать бюджет
-    // calcBudget();
+    view.renderBudget(model.calcBudget()); // Посчитать бюджет
   }
 });

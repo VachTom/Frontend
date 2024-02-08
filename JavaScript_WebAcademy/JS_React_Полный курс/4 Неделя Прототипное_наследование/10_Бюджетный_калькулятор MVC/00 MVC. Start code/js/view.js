@@ -83,12 +83,7 @@ function renderRecord(record) {
   }
 }
 
-function renderBudget({
-  totalBudget,
-  totalExpense,
-  totalIncome,
-  expensePercents,
-}) {
+function renderBudget({totalBudget, totalExpense, totalIncome, expensePercents,}) {
   elements.budgetEl.innerHTML = priceFormatter.format(totalBudget);
 
   elements.totalIncomeEl.innerHTML = "+ " + priceFormatter.format(totalIncome);
@@ -107,7 +102,7 @@ function clearForm() {
   elements.form.reset();
 }
 
-function renderMonth(month, year) {
+function renderMonth({month, year}) {
   elements.monthEl.innerHTML = month;
   elements.yearEl.innerHTML = year;
 }
