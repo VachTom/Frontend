@@ -56,8 +56,8 @@
 //         console.log("-----------------");
 
 //         function printToConsole(){
-//             console.log(this);
-//             console.log(this.objectName);
+//             console.log(this); // Window, но если эта была бы стрелочная функция она бы ссылалась на объект, тк она поднимается в поисках окружения нормальной функции
+//             console.log(this.objectName); // underfined
 //         }
 //        printToConsole()
 //     }
@@ -72,7 +72,7 @@
 //     sayHi: function () {
 //         console.log("-----------------");
 //         console.log(this);
-//         console.log(this.objectName); // Object One
+//         console.log(this.objectName); // Object One, но если была бы стрелочная функция, то был бы underfined, тк она поднимается наверх, а там обьект, который в глобальной области видимости 
 //         console.log("-----------------");
 
 //         const printToConsole = () => {
@@ -90,36 +90,33 @@
 // objectOne.sayHi();
 
 // var objN = {
-//   name: "Object",
-//   sayHello: function () {
-//     console.log(this)
-//     var objN2 = {
-//       name2: "Object2",
-//       sayHello2: () => {
-//         console.log(this);
-//         // console.log(this.)
-//       },
-//     };
-//     objN2.sayHello2();
-//   },
-// };
-// objN.sayHello()
-
 
 // -------------------------------------------------------------------------------------
-
 
 // var n = {
 //     obJ: "ObJect names",
 //     arrr: [10, 35, 86],
 //     value: 100,
 //     incr: function () {
-//         const s = this.arrr.forEach(item){
-//             console.log(item + n.value)
-//         }
+//         var that = this
+//         this.arrr.forEach(function(item) {
+//             console.log(item + that.value)
+//         })
 //     },
 // }
+// // console.log(n.value)
+// n.incr()
 
+// var outObject = {
+//   masArr: [55, 1000, 654],
+//   value: 10,
+//   func: function () {
+//     this.masArr.forEach(() => {
+//       console.log(this);
+//     });
+//   },
+// };
+// outObject.func()
 
 /*
 Стрелочные функции особенные:
@@ -234,7 +231,7 @@ objectOuter.someAction();
 // }
 // obj.increaseArrayOnValue();
 
-/* ------------- 3-й вариант решения: Привязка контекста через bind() ----------- */
+/* ------------- 3-й вариант решения:  Стрелочной функция ----------- */
 /*
 var obj = {
     objName: "Object with array",
@@ -268,3 +265,71 @@ obj.increaseArrayOnValue();
 3. this "ссылается" на это окружение
 
 */
+
+// let user = [
+//   {
+//     name: "John",
+//     age: 30,
+//     s: 5,
+//   },
+//   {
+//     name: "Bob",
+//     age: 21,
+//     s: 8,
+//   },
+//   {
+//     name: "Anna",
+//     age: 19,
+//     s: 1,
+//   },
+//   {
+//     name: "Mark",
+//     age: 35,
+//   },
+// ];
+
+// Задание 1
+// Получите из этого массива объект, где name == "Bob" и сохраните это в какой-либо переменной.
+
+// user.findIndex(function (item) {
+//     if (item.name == "Bob") {
+//         return console.log(item)
+//     }
+// })
+
+// user.find((item) => {
+//   if (item.name === "Bob") console.log(item);
+// });
+
+
+// Задание 2
+// Удалите из массива объектов (задание 2) объект с name == "Anna".
+
+// var removeIndex = user.findIndex((item) => {
+//     if (item.name === "Anna") return item
+// })
+// user.splice(removeIndex, 1)
+// console.log(user)
+
+// Задание 3
+// Отсортируйте массив объектов в пункте 2 по свойству age в порядке возрастания.
+
+// user.sort(function (a, b) {
+//     if (a.age > b.age) {
+//       return 1;
+//     }
+//     if (a.age < b.age) {
+//       return -1;
+//     }
+//     // a должно быть равным b
+//     return 0;
+//   });
+// console.log(user)
+
+
+
+// const obj = {
+//     id: 5,
+//     token: 12343423
+// };
+// obj.
