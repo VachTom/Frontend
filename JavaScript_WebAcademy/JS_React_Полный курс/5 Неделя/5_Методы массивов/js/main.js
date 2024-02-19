@@ -36,6 +36,11 @@ console.log(arrayFromString);
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 */
 
+
+
+
+
+
 // ----------------------------------------------
 // 2. Массивы. for ( of ) and breake and continue
 // ----------------------------------------------
@@ -74,24 +79,28 @@ for ( const item of ages) {
 }
 */
 
+
+
+        
+
 // ----------------------------------------------
 // 3. Массивы. .findIndex() and .find()
 // ----------------------------------------------
 
-const ages = [12, 17, 21, 8, 14, 25];
+// const ages = [12, 17, 21, 8, 14, 25];
 
-// ES6 Метод .findIndex()
-// возвращает индекс элемента удовлетворяющего условию
+// // ES6 Метод .findIndex()
+// // возвращает индекс элемента удовлетворяющего условию
 
-const itemIndex = ages.findIndex((item)=>{
-    return item > 18
-});
-console.log(itemIndex);
+// const itemIndex = ages.findIndex((item)=>{
+//     return item > 18
+// });
+// console.log(itemIndex);
 
-// ES6 Метод .find()
-// возвращает значение элемента удовлетворяющего условию
+// // ES6 Метод .find()
+// // возвращает значение элемента удовлетворяющего условию
 
-const itemValue = ages.find((item)=>{
-    return item > 18;
-});
-console.log(itemValue);
+// const itemValue = ages.find((item)=>{
+//     return item > 18;
+// });
+// console.log(itemValue);

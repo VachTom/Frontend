@@ -1,0 +1,25 @@
+{
+    "siteName": "WebCademy",
+    "courses": {
+        "free": [
+            {
+                "title": "Создай свой первый сайт на HTML5 и CSS3",
+                "days": 7,
+                "techs": "html"
+            }
+        ],
+        "payed": [
+            {
+                "title": "Курс по созданию и верстке сайтов.",
+                "days": 42,
+                "techs": "html"
+            },
+            {
+                "title": "Продвинутая верстка. Командная работа",
+                "days": 28,
+                "techs": ["gulp", "scss", "pug", "git", "github"]
+            }
+        ]
+
+    }
+}

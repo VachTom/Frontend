@@ -1,0 +1,19 @@
+{
+    "name": "John",
+    "age": 26,
+    "profesion": "Programmer",
+    "isMarried": true,
+    "skills": ["JavaScript", "PHP", "HTML", "CSS"],
+    "projects": [
+        {
+            "projectName": "Online Cinema",
+            "year": 2020,
+            "company": "Yandex"
+        },
+        {
+            "projectName": "Pizza Shop",
+            "year": 2020,
+            "company": "Dodo pizza"
+        }
+    ]
+}
