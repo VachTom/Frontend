@@ -1,10 +1,11 @@
+
 function getTestData() {
   let dates = new Date();
   dates =
     dates.getUTCDate() + ".0" + dates.getUTCMonth() + "." + dates.getFullYear();
-  testData = [
+  let testData = [
     {
-      id: 0,
+      id: 1,
       data: dates,
       product: "Курс по JavaScript",
       name: "Вачик Каренович",
@@ -13,7 +14,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 2,
       data: dates,
       product: "Курс по PHP",
       name: "Андрей Ярославский",
@@ -22,7 +23,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 3,
       data: dates,
       product: "Курс по верстке",
       name: "Давид Арменович",
@@ -31,7 +32,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 4,
       data: dates,
       product: "Курс по VUE JS",
       name: "Арцрун Аршакович",
@@ -40,7 +41,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 5,
       data: dates,
       product: "Курс по VUE JS",
       name: "Саркис Лабрадорович",
@@ -49,7 +50,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 6,
       data: dates,
       product: "Курс по JavaScript",
       name: "Армен Акопович",
@@ -58,7 +59,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 7,
       data: dates,
       product: "Курс по WordPress",
       name: "Владимир Ипресян",
@@ -67,7 +68,7 @@ function getTestData() {
       status: "new",
     },
     {
-      id: 0,
+      id: 8,
       data: dates,
       product: "Курс по JavaScript",
       name: "Алексей Трезубцов",
@@ -76,7 +77,14 @@ function getTestData() {
       status: "new",
     },
   ];
-  console.log(testData);
+  function randomNumb(length) {
+    return Math.floor(Math.random() * length);
+  }
+  const renderRandomNumb = randomNumb(testData.length)
+  const renderTestData = testData[renderRandomNumb];
+  return console.log(renderTestData);
 }
-getTestData();
-export { getTestData };
+
+
+
+export { getTestData,  };
