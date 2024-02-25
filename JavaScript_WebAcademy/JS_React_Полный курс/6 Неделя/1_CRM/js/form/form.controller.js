@@ -4,13 +4,19 @@ import * as view from "./form.view.js";
 
 // testData.getTestData()
 
-
-view.elementsForm.formApplication.addEventListener('click', function (e) {
- e.preventDefault();
-const bud = []
+const bud = [];
 
 const record = {
- name: 
-}
+ name: this.name,
+};
 
-})
+
+view.elementsForm.formApplication.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  function renderRecord(item) {
+    bud.push(item);
+  }
+  renderRecord(testData.getTestData());
+  console.log(bud);
+});
