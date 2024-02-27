@@ -8,13 +8,52 @@
 6. Для обозначения переменных используем let и const. Без var.
 */
 
-const requst = []
-function greatZ(params) {
- 
+const requst = [];
+
+function dateFull() {
+  const now = new Date();
+  const year =
+    now.getUTCDate() + ".0" + now.getUTCMonth() + "." + now.getUTCFullYear();
+  return year;
+}
+
+function createRecord(formData) {
+  let id = 1;
+  if (requst.length > 0) {
+    const lastElement = requst[requst.length - 1];
+    const lastElID = lastElement.id;
+    id = lastElID + 1;
+  }
+  const record = {
+    id: id,
+    data: dateFull(),
+    name: formData.name,
+    phone: formData.phone,
+    email: formData.email,
+    product: formData.product,
+  };
+  requst.push(record);
+  console.log("Массив: ", requst);
+
+  localStorage.setItem("requst", JSON.stringify(requst));
+  return record;
+}
+
+function getLocalStorage(getLStorage) {
+  if (getLStorage != null) {
+    getLStorage.forEach(function (item) {
+      if (getLStorage) {
+        requst.push(item);
+        localStorage.setItem("requst", JSON.stringify(requst));
+      }
+    });
+  } 
+  // else {
+    // localStorage.setItem("requst", JSON.stringify(requst));
+  // }
 }
 
 
 
 
-
-export {  };
+export { requst, createRecord, dateFull, getLocalStorage };

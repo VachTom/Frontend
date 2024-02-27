@@ -82,9 +82,12 @@ function getTestData() {
   }
   const renderRandomNumb = randomNumb(testData.length)
   const renderTestData = testData[renderRandomNumb];
-  return console.log(renderTestData);
+  return renderTestData;
+}
+
+function renderTestData(item) {
+  
 }
 
 
-
-export { getTestData,  };
+export { getTestData,  renderTestData};
