@@ -43,9 +43,7 @@ const priceFormatter = new Intl.NumberFormat("ru-RU", {
 function renderRecord(record) {
   // Отображаем Доход на странице
   if (record.type === "inc") {
-    const html = `<li data-id="${
-      record.id
-    }" class="budget-list__item item item--income">
+    const html = `<li data-id="${record.id}" class="budget-list__item item item--income">
                         <div class="item__title">${record.title}</div>
                         <div class="item__right">
                             <div class="item__amount">+ ${priceFormatter.format(

@@ -47,13 +47,13 @@ function getLocalStorage(getLStorage) {
         localStorage.setItem("requst", JSON.stringify(requst));
       }
     });
-  } 
-  // else {
-    // localStorage.setItem("requst", JSON.stringify(requst));
-  // }
+  }
 }
 
+function checkEmpty(formInput) {
+  if (formInput.value != "") {
+    return true;
+  }
+}
 
-
-
-export { requst, createRecord, dateFull, getLocalStorage };
+export { requst, createRecord, dateFull, getLocalStorage, checkEmpty };
