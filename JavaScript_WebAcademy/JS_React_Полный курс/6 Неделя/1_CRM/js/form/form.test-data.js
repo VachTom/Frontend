@@ -89,56 +89,56 @@ function getTestData() {
   return renderTestData;
 }
 
-// function renderTestData(item) {
-//   // if () {
+function renderTestData(item) {
+  // if () {
 
-//   // }
-//   const htmlGetTestData = ` <div class="form-group">
-//                               <input
-//                                 id="email"
-//                                 type="email"
-//                                 name="email"
-//                                 autocomplete="on"
-//                                 class="form-control"
-//                                 placeholder="Email"
-//                                 required
-//                               />
-//                             </div>`;
+  // }
+  const htmlGetTestData = ` <div class="form-group">
+                              <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                autocomplete="on"
+                                class="form-control"
+                                placeholder="Email"
+                                required
+                              />
+                            </div>`;
 
-//   const s = [
-//     ` <div class="form-group">
-//                                         <input 
-//                                           id="name"
-//                                           type="text"
-//                                           name="name"
-//                                           autocomplete="on"
-//                                           class="form-control"
-//                                           placeholder="Имя и Фамилия"
-//                                           required
-//                                         />
-//                                       </div>
-//                                       <div class="form-group">
-//                                         <input
-//                                           id="phone"
-//                                           type="text"
-//                                           name="phone"
-//                                           autocomplete="on"
-//                                           class="form-control"
-//                                           placeholder="Телефон"
-//                                         />
-//                                       </div>
-//                                       <div class="form-group">
-//                                         <input
-//                                           id="email"
-//                                           type="email"
-//                                           name="email"
-//                                           autocomplete="on"
-//                                           class="form-control"
-//                                           placeholder="Email"
-//                                           required
-//                                         />
-//                                       </div>`,
-//   ];
-// }
+  const s = [
+    ` <div class="form-group">
+                                        <input 
+                                          id="name"
+                                          type="text"
+                                          name="name"
+                                          autocomplete="on"
+                                          class="form-control"
+                                          placeholder="Имя и Фамилия"
+                                          required
+                                        />
+                                      </div>
+                                      <div class="form-group">
+                                        <input
+                                          id="phone"
+                                          type="text"
+                                          name="phone"
+                                          autocomplete="on"
+                                          class="form-control"
+                                          placeholder="Телефон"
+                                        />
+                                      </div>
+                                      <div class="form-group">
+                                        <input
+                                          id="email"
+                                          type="email"
+                                          name="email"
+                                          autocomplete="on"
+                                          class="form-control"
+                                          placeholder="Email"
+                                          required
+                                        />
+                                      </div>`,
+  ];
+}
 
 export { getTestData };

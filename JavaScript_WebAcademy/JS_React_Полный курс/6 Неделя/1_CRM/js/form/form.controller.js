@@ -14,6 +14,8 @@ import * as view from "./form.view.js";
 //   }
 // });
 
+
+
 view.elementsForm.form.addEventListener("submit", function (e) {
   e.preventDefault();
 

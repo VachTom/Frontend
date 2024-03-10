@@ -51,7 +51,7 @@ function getLocalStorage(getLStorage) {
 }
 
 function checkEmpty(formInput) {
-  if (formInput.value != "") {
+  if (formInput != "") {
     return true;
   }
 }
