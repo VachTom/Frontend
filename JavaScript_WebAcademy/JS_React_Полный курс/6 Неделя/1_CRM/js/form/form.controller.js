@@ -16,20 +16,26 @@ import * as view from "./form.view.js";
 
 
 
+view.renderTestData(testData.getTestData())
+
+
 view.elementsForm.form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const l = view.elementsForm.name.value;
-  if (!model.checkEmpty(l)) {
-    const s = testData.getTestData();
-    model.createRecord(s);
-    console.log("Тест", s);
-  } 
-  if (model.checkEmpty(l)) {
-    const formData = view.getFormData();
-    model.createRecord(formData);
-    console.log("Инпутик", formData);
-  }
+  // const l = view.elementsForm.name;
+  // if (!model.checkEmpty(l)) {
+  //   const s = testData.getTestData();
+  //   model.createRecord(s);
+  //   console.log("Тест", s);
+  // } 
+  // if (model.checkEmpty(l)) {
+  //   const formData = view.getFormData();
+  //   model.createRecord(formData);
+  //   console.log("Инпутик", formData);
+  // }
+
+
+  
 
   // console.log(l);
   // const sad = checkEmpty(l);
