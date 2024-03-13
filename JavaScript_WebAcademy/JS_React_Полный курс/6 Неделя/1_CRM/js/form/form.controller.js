@@ -22,8 +22,6 @@ view.elementsForm.form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const getTestData = testData.getTestData();
-  // console.log("Тесттттттттттффффффффф", getTestData);
-
 
   const l = view.elementsForm.name;
   if (!model.checkEmpty(l)) {
@@ -34,25 +32,16 @@ view.elementsForm.form.addEventListener("submit", function (e) {
     model.createRecord(getTestData);
     console.log("Тест", getTestData);
   } 
+
   // if (model.checkEmpty(l)) {
   //   const formData = view.getFormData();
   //   model.createRecord(formData);
   //   console.log("Инпутик", formData);
   // }
 
-
-  view.renderDataReplace()
-  view.renderDataReplace()
   view.renderDataReplace()
 view.renderTestData(getTestData)
 
-
-  // console.log(l);
-  // const sad = checkEmpty(l);
-  // console.log(sad)
-  // view.renderTestData(record)
-
-  // view.renderTestData(getTestData)
 });
 
 const getLStorage = JSON.parse(localStorage.getItem("requst"));

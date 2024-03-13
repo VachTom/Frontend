@@ -6,6 +6,7 @@ const elementsForm = {
   email: document.getElementById("email"),
   product: document.getElementById("product"),
   formApplication: document.getElementById("formApplication"),
+  inputs: document.querySelector(".inputs"),
 };
 // function renderGetData(elem) {
 //   elementsForm.product.value = elem.product;
@@ -27,6 +28,7 @@ function getFormData() {
 function renderTestData(record) {
   const htmlName = `<div class="form-group">
                       <input 
+                        data-id="inputs"
                         value="${record.name}"
                         id="name"
                         type="text"
@@ -40,6 +42,7 @@ function renderTestData(record) {
 
   const htmlEmail = `<div class="form-group">
                         <input
+                          data-id="inputs"
                           value="${record.email}"
                           id="email"
                           type="email"
@@ -53,6 +56,7 @@ function renderTestData(record) {
 
   const htmlPhone = `<div class="form-group">
                        <input
+                         data-id="inputs"
                          value="${record.phone}"
                          id="phone"
                          type="text"
@@ -80,9 +84,12 @@ function renderTestData(record) {
 }
 
 function renderDataReplace() {
-  if (elementsForm.form) {
-    elementsForm.form.remove();
-  }
+  console.log(elementsForm.inputs);
+  // if (elementsForm.form.firstElementChild) {
+  //   console.log("!!!!");
+
+  //   elementsForm.form.
+  // }
 }
 
 export { elementsForm, getFormData, renderTestData, renderDataReplace };
