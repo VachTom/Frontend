@@ -63,12 +63,11 @@ function renderTestData(record) {
                        />
                       </div>`;
 
-  function rendData(data) {
-    elementsForm.form.firstElementChild.insertAdjacentHTML("afterend", data);
+  function rendData(record) {
+    elementsForm.form.firstElementChild.insertAdjacentHTML("afterend", record);
   }
   rendData(htmlName + htmlPhone + htmlEmail);
 
-  
   function rendSelectOptions() {
     const as = elementsForm.product.getElementsByTagName("option");
     for (let i = 0; i < as.length; i++) {
@@ -80,4 +79,10 @@ function renderTestData(record) {
   rendSelectOptions();
 }
 
-export { elementsForm, getFormData, renderTestData };
+function renderDataReplace() {
+  if (elementsForm.form) {
+    elementsForm.form.remove();
+  }
+}
+
+export { elementsForm, getFormData, renderTestData, renderDataReplace };
