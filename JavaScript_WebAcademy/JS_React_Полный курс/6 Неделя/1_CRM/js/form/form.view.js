@@ -1,76 +1,30 @@
 const elementsForm = {
   form: document.getElementById("form"),
-
   name: document.getElementById("name"),
   phone: document.getElementById("phone"),
   email: document.getElementById("email"),
   product: document.getElementById("product"),
   formApplication: document.getElementById("formApplication"),
   inputs: document.querySelector(".inputs"),
+  formControl: document.getElementsByClassName("form-control"),
 };
-// function renderGetData(elem) {
-//   elementsForm.product.value = elem.product;
-//   elementsForm.name.value = elem.name;
-//   elementsForm.email.value = elem.email;
-// }
 
 function getFormData() {
   const formData = {
-    name: elementsForm.name.value,
-    phone: elementsForm.phone.value,
-    email: elementsForm.email.value,
-    product: elementsForm.product.value,
+    name: elementsForm.name,
+    phone: elementsForm.phone,
+    email: elementsForm.email,
+    product: elementsForm.product,
   };
+  console.log(formData.email);
   return formData;
 }
 
 // Передаем Массив с обьектами и вытаскиваем по if имя и выводим в соответсвующее поле
 function renderTestData(record) {
-  const htmlName = `<div class="form-group">
-                      <input 
-                        data-id="inputs"
-                        value="${record.name}"
-                        id="name"
-                        type="text"
-                        name="name"
-                        autocomplete="on"
-                        class="form-control"
-                        placeholder="Имя и Фамилия"
-                        required
-                      />
-                    </div>`;
-
-  const htmlEmail = `<div class="form-group">
-                        <input
-                          data-id="inputs"
-                          value="${record.email}"
-                          id="email"
-                          type="email"
-                          name="email"
-                          autocomplete="on"
-                          class="form-control"
-                          placeholder="Email"
-                          required
-                         />
-                     </div>`;
-
-  const htmlPhone = `<div class="form-group">
-                       <input
-                         data-id="inputs"
-                         value="${record.phone}"
-                         id="phone"
-                         type="text"
-                         name="phone"
-                         autocomplete="on"
-                         class="form-control"
-                         placeholder="Телефон"
-                       />
-                      </div>`;
-
-  function rendData(record) {
-    elementsForm.form.firstElementChild.insertAdjacentHTML("afterend", record);
-  }
-  rendData(htmlName + htmlPhone + htmlEmail);
+  elementsForm.name.value = record.name;
+  elementsForm.email.value = record.email;
+  elementsForm.phone.value = record.phone;
 
   function rendSelectOptions() {
     const as = elementsForm.product.getElementsByTagName("option");
@@ -83,13 +37,10 @@ function renderTestData(record) {
   rendSelectOptions();
 }
 
-function renderDataReplace() {
-  console.log(elementsForm.inputs);
-  // if (elementsForm.form.firstElementChild) {
-  //   console.log("!!!!");
-
-  //   elementsForm.form.
-  // }
+function clearForm() {
+  elementsForm.name.value = "";
+  elementsForm.email.value = "";
+  elementsForm.phone.value = "";
 }
 
-export { elementsForm, getFormData, renderTestData, renderDataReplace };
+export { elementsForm, getFormData, renderTestData, clearForm };
