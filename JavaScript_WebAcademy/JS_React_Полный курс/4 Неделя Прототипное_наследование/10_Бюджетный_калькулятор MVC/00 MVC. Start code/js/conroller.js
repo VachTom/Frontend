@@ -2,12 +2,8 @@ import * as model from "./model.js";
 import * as view from "./view.js";
 
 // Functions
-
 view.renderTestData(model.getTestData());
 view.renderMonth(model.displayMonth());
-
-// Actions
-view.renderTestData(model.getTestData());
 view.renderBudget(model.calcBudget()); // Посчитать бюджет
 
 // Добавление
@@ -18,7 +14,9 @@ view.elements.form.addEventListener("submit", function (e) {
   if (checkResult === false) return; // проверка условий функции проверки
   //   if (!view.checkEmptyFields()) return; // проверка условий функции проверки
   const formData = view.getFormData();
+  console.log("formData", formData)
   const record = model.createRecord(formData);
+  console.log("record", record)
 
   view.renderRecord(record);
 

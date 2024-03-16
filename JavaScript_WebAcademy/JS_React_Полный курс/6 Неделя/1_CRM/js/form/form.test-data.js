@@ -88,6 +88,6 @@ function getTestData() {
   const renderTestData = testData[renderRandomNumb];
   return renderTestData;
 }
+const testData = getTestData()
 
-
-export { getTestData };
+export { getTestData, testData };

@@ -11,12 +11,11 @@ const elementsForm = {
 
 function getFormData() {
   const formData = {
-    name: elementsForm.name,
-    phone: elementsForm.phone,
-    email: elementsForm.email,
-    product: elementsForm.product,
+    name: elementsForm.name.value,
+    phone: elementsForm.phone.value,
+    email: elementsForm.email.value,
+    product: elementsForm.product.value,
   };
-  console.log(formData.email);
   return formData;
 }
 
