@@ -48,13 +48,13 @@
 							<div class="card mb-4">
 								<div class="card-header">Данные о заявке</div>
 								<div class="card-body">
-									<div class="row mb-3">
-										<div class="col-md-2">
-											<strong>ID:</strong>
-										</div>
-										<div class="col">Заявка №<span id="number">1</span></div>
-										<input name="id" type="hidden" id="id">
-									</div>
+															<div class="row mb-3">
+																<div class="col-md-2">
+																	<strong>ID:</strong>
+																</div>
+																<div class="col">Заявка №<span id="number">1</span></div>
+																<input name="id" type="hidden" id="id">
+															</div>
 
 									<div class="row mb-3">
 										<div class="col-md-2">
@@ -70,14 +70,10 @@
 										<div class="col">
 											<select id="product" name="product" class="custom-select" >
 												<option value="course-html">Курс по верстке</option>
-												<option value="course-js">
-													Курс по JavaScript
-												</option>
+												<option value="course-js">Курс по JavaScript</option>
 												<option value="course-vue">Курс по VUE JS</option>
 												<option value="course-php">Курс по PHP</option>
-												<option value="course-wordpress">
-													Курс по WordPress
-												</option>
+												<option value="course-wordpress">Курс по WordPress</option>
 											</select>
 										</div>
 									</div>
@@ -158,11 +154,11 @@
 		<!-- // main-wrapper -->
 
 		<!-- Модель -->
-		<script src="./js/model.js" ></script>
+		<script src="./js/model.js" type="module"></script>
 
 		<!-- Редактирование -->
-		<script src="./js/edit/edit.view.js" ></script>
-		<script src="./js/edit/edit.controller.js" ></script>
+		<script src="./js/edit/edit.view.js" type="module"></script>
+		<script src="./js/edit/edit.controller.js" type="module"></script>
 
 	</body>
 </html>
