@@ -16,7 +16,7 @@ function dateFull() {
 }
 
 function createRecord(formData) {
-  let id = 1;
+  let id = 0;
   if (requst.length > 0) {
     const lastElement = requst[requst.length - 1];
     const lastElID = lastElement.id;
