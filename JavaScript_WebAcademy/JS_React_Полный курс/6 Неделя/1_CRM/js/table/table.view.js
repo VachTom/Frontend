@@ -1,17 +1,16 @@
 // import * as view from "../form/form.view"
-const text = "Редактировать"
 const elementsTable = {
   body: document.querySelector("body"),
   listRequst: document.getElementById("tbody"),
-  trList: document.querySelector("trList"),
-  aEdit: document.getElementsByClassName("aEdit"),
+  trList: document.getElementsByClassName("trList"),
+  aEdit: document.getElementById("aEdit"),
 
 };
 
 function renderListRequest(record) {
   const listHTML = `
- <tr сдфid="trList">
-  <th scope="row">${record.id}</th>
+ <tr class="trList">
+  <th class="idRow" scope="row">${record.id}</th>
   <td>${record.data}</td>
   <td>${record.product}</td>
   <td>${record.name}</td>
@@ -21,7 +20,7 @@ function renderListRequest(record) {
    <div class="badge badge-pill badge-danger">Новый</div>
   </td>
   <td>
-   <a href="edit.html" class="aEdit">Редактировать</a>
+   <a href="edit.html" id="aEdit">Редактировать</a>
   </td>
  <tr>`;
   // <div class="badge badge-pill badge-warning">В работе</div>

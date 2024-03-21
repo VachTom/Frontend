@@ -11,18 +11,11 @@ function sda(arr) {
 }
 sda(getLStorage);
 
+const actionNumber = viewTable.elementsTable.listRequst.addEventListener("click", function (e) {
+  e.preventDefault();
+  const eTarget = e.target;
 
-
-const q = viewTable.elementsTable.aEdit.closest()
-console.log(q)
-viewTable.elementsTable.listRequst.addEventListener("click", function (e) {
-  console.log(e.target);
-  // if (e.target = viewTable.elementsTable.aEdit) {
-   // viewTable.elementsTable.aEdit.click()
-  // }
-
+  return eTarget.closest(".trList").firstChild.nextElementSibling.innerText;
 });
 
-// viewTable.elementsTable.aEdit.addEventListener("click", function (e) {
-//  console.log(e.target)
-// })
+export { actionNumber };

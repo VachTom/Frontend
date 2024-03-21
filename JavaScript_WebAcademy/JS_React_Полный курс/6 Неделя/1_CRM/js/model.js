@@ -54,4 +54,13 @@ function checkEmpty(formInput) {
   }
 }
 
-export { requst, createRecord, dateFull, getLocalStorage, checkEmpty };
+function findRecordEdit(dataIndex) {
+  const getLStorage = JSON.parse(localStorage.getItem("requst"));
+  model.getLocalStorage(getLStorage);
+  getLStorage.forEach(function (item) {
+    console.log(item)
+    console.log(dataIndex)
+  })
+}
+
+export { requst, createRecord, dateFull, getLocalStorage, checkEmpty, findRecordEdit };
