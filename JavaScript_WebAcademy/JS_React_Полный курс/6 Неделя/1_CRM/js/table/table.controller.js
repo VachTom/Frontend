@@ -11,11 +11,16 @@ function sda(arr) {
 }
 sda(getLStorage);
 
-const actionNumber = viewTable.elementsTable.listRequst.addEventListener("click", function (e) {
+viewTable.elementsTable.listRequst.addEventListener("onclick", function (e) {
   e.preventDefault();
+
   const eTarget = e.target;
 
-  return eTarget.closest(".trList").firstChild.nextElementSibling.innerText;
+  if (eTarget.tagName === "A") {
+    localStorage.setItem(
+      "id",
+      eTarget.closest(".trList").firstChild.nextElementSibling.innerText
+    );
+  }
 });
 
-export { actionNumber };

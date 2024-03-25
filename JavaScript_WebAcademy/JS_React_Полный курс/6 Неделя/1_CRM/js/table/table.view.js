@@ -3,7 +3,7 @@ const elementsTable = {
   body: document.querySelector("body"),
   listRequst: document.getElementById("tbody"),
   trList: document.getElementsByClassName("trList"),
-  aEdit: document.getElementById("aEdit"),
+  aEdit: document.getElementsByClassName("aEdit"),
 
 };
 
@@ -20,7 +20,7 @@ function renderListRequest(record) {
    <div class="badge badge-pill badge-danger">Новый</div>
   </td>
   <td>
-   <a href="edit.html" id="aEdit">Редактировать</a>
+   <a href="edit.html?id=${record.id}" class="aEdit">Редактировать</a>
   </td>
  <tr>`;
   // <div class="badge badge-pill badge-warning">В работе</div>

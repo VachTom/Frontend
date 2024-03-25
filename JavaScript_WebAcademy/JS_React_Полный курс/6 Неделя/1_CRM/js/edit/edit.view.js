@@ -1,7 +1,7 @@
-const elementsEdit = {
-  id: document.getElementById("id"),
-};
-const s = elementsEdit.id;
+// const elementsEdit = {
+//   id: document.getElementById("id"),
+// };
+// const s = elementsEdit.id;
 
-console.log(s.value);
-export { elementsEdit };
+// console.log(s.value);
+// export { elementsEdit };
