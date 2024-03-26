@@ -1,6 +1,16 @@
-// import * as model from "../model.js"
-// import * as viewEdit from "./edit.view.js"
-// import * as tabContr from "../table/table.controller.js";
+function init() {
+  const id = getRequstId();
+}
 
-// const d = tabContr.actionNumber;
-// console.log(d);
+function getRequstId() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  console.log(id);
+
+  const req = JSON.parse(localStorage.getItem("requst"));
+  console.log(req);
+
+  req.find((index) => {
+  });
+}
+init();

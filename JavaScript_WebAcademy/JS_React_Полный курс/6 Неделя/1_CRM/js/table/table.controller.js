@@ -11,16 +11,16 @@ function sda(arr) {
 }
 sda(getLStorage);
 
-viewTable.elementsTable.listRequst.addEventListener("onclick", function (e) {
-  e.preventDefault();
+// viewTable.elementsTable.listRequst.addEventListener("onclick", function (e) {
+//   e.preventDefault();
 
-  const eTarget = e.target;
+//   const eTarget = e.target;
 
-  if (eTarget.tagName === "A") {
-    localStorage.setItem(
-      "id",
-      eTarget.closest(".trList").firstChild.nextElementSibling.innerText
-    );
-  }
-});
+//   if (eTarget.tagName === "A") {
+//     localStorage.setItem(
+//       "id",
+//       eTarget.closest(".trList").firstChild.nextElementSibling.innerText
+//     );
+//   }
+// });
 
