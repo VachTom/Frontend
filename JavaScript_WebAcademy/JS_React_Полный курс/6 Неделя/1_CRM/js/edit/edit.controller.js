@@ -4,13 +4,11 @@ function init() {
 
 function getRequstId() {
   const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  console.log(id);
+  const idReq = parseInt(params.get("id"));
 
   const req = JSON.parse(localStorage.getItem("requst"));
-  console.log(req);
 
-  req.find((index) => {
-  });
+  const resultRequst = req.filter((item) => item.id === idReq);
+  console.log("Вроде это", resultRequst);
 }
 init();
