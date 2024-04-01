@@ -11,7 +11,7 @@ function renderListRequest(record) {
   const listHTML = `
  <tr class="trList">
   <th class="idRow" scope="row">${record.id}</th>
-  <td>${record.data}</td>
+  <td>${record.date}</td>
   <td>${record.product}</td>
   <td>${record.name}</td>
   <td>${record.email}</td>

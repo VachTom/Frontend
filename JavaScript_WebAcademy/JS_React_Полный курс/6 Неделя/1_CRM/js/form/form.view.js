@@ -15,6 +15,7 @@ function getFormData() {
     phone: elementsForm.phone.value,
     email: elementsForm.email.value,
     product: elementsForm.product.value,
+    status: "Новая"
   };
   return formData;
 }

@@ -24,11 +24,12 @@ function createRecord(formData) {
   }
   const record = {
     id: id,
-    data: dateFull(),
+    date: dateFull(),
     name: formData.name,
     phone: formData.phone,
     email: formData.email,
     product: formData.product,
+    status: formData.status
   };
   requst.push(record);
   console.log("Массив: ", requst);
