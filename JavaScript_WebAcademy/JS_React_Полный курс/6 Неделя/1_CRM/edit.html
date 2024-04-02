@@ -68,7 +68,7 @@
 										<div class="col-md-2">
 											<strong>Продукт:</strong>
 										</div>
-										<div class="col">
+										<div data-attr="collArr" class="col">
 											<select id="product" name="product" class="custom-select" >
 												<option value="Курс по верстке">Курс по верстке</option>
 												<option value="Курс по JavaScript">Курс по JavaScript</option>
@@ -83,7 +83,7 @@
 										<div class="col-md-2">
 											<strong>Имя:</strong>
 										</div>
-										<div id="nameHTML" class="col">
+										<div data-attr="collArr" id="nameHTML" class="col">
 										</div>
 									</div>
 
@@ -91,7 +91,7 @@
 										<div class="col-md-2">
 											<strong>Email:</strong>
 										</div>
-										<div id="emailHTML" class="col">
+										<div data-attr="collArr" id="emailHTML" class="col">
 										</div>
 									</div>
 
@@ -99,7 +99,7 @@
 										<div class="col-md-2">
 											<strong>Телефон:</strong>
 										</div>
-										<div id="phoneHTML" class="col">
+										<div data-attr="collArr" id="phoneHTML" class="col">
 										</div>
 									</div>
 
@@ -107,7 +107,7 @@
 										<div class="col-md-2">
 											<strong>Статус заявки:</strong>
 										</div>
-										<div class="col">
+										<div data-attr="collArr" class="col">
 											<select class="custom-select" id="status" name="status">
 												<option selected="">Выберите...</option>
 												<option value="Новая">Новая</option>
@@ -121,7 +121,7 @@
 							<!-- //card -->
 							<div class="row justify-content-between">
 								<div class="col text-right">
-									<button type="submit" class="btn btn-primary">Сохранить изменения</button>
+									<button id="saveEdit" type="submit" class="btn btn-primary">Сохранить изменения</button>
 								</div>
 							</div>
 						</form>
