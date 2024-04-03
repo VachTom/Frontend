@@ -9,12 +9,15 @@ const elementsTable = {
   saveEdit: document.getElementById("saveEdit"),
   col: document.querySelectorAll(".col"),
   coll: document.querySelectorAll('[data-attr="collArr"]'),
-
 };
-const qw = Array.from(elementsTable.coll)
-// console.log(qw)
+const qw = elementsTable.coll;
 
-qw.forEach(el => console.log(el))
+ console.log(qw)
+
+for (let i = 0; i < qw.length; i++) {
+  console.log(qw.childNodes[i])
+  
+}
 
 function renderResultRequst(itemSearch) {
   const idHTML = `<div class="col">Заявка №<span id="number"> ${itemSearch[0].id}</span></div>`;
