@@ -1,4 +1,5 @@
 const elementsTable = {
+  form: document.getElementById("form"), 
   numberID: document.getElementById("id"),
   date: document.getElementById("dateStrong"),
   product: document.getElementById("product"),
@@ -10,13 +11,20 @@ const elementsTable = {
   col: document.querySelectorAll(".col"),
   coll: document.querySelectorAll('[data-attr="collArr"]'),
 };
-const qw = elementsTable.coll;
 
- console.log(qw)
+function getFormData() {
+  return new FormData(elementsTable.form)
+}
+
+const qw = Array.from(elementsTable.coll);
+// console.log(qw);
+// const w = qw.forEach(function (item) {
+//   console.log(item.textContent)
+// });
 
 for (let i = 0; i < qw.length; i++) {
-  console.log(qw.childNodes[i])
-  
+  console.log(qw[i].childNodes[0].parentNode)
+
 }
 
 function renderResultRequst(itemSearch) {
@@ -36,7 +44,7 @@ function renderResultRequst(itemSearch) {
   }
   rendSelectOptionsProduct();
 
-  const nameHTML = `<input type="text" class="form-control" value="${itemSearch[0].name}" id="name" name="name"/>`;
+  const nameHTML = `<div type="text" class="form-control" id="name" name="name">${itemSearch[0].name}</div>`;
   elementsTable.name.insertAdjacentHTML("afterbegin", nameHTML);
 
   const emailHTML = `<input type="text" class="form-control" value="${itemSearch[0].email}" id="email" name="email"/>`;
@@ -54,6 +62,8 @@ function renderResultRequst(itemSearch) {
     }
   }
   rendSelectOptionsStatus();
+
+
 }
 
-export { elementsTable, renderResultRequst };
+export { elementsTable, renderResultRequst, getFormData };
