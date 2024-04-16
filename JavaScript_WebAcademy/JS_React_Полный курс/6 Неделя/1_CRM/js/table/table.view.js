@@ -4,7 +4,6 @@ const elementsTable = {
   listRequst: document.getElementById("tbody"),
   trList: document.getElementsByClassName("trList"),
   aEdit: document.getElementsByClassName("aEdit"),
-
 };
 
 function renderListRequest(record) {
@@ -17,7 +16,7 @@ function renderListRequest(record) {
   <td>${record.email}</td>
   <td>${record.phone}</td>
   <td>
-   <div class="badge badge-pill badge-danger">Новый</div>
+   <div class="badge badge-pill ${statusColor(record)}">${record.status}</div>
   </td>
   <td>
    <a href="edit.html?id=${record.id}" class="aEdit">Редактировать</a>
@@ -26,16 +25,15 @@ function renderListRequest(record) {
   // <div class="badge badge-pill badge-warning">В работе</div>
   // <div class="badge badge-pill badge-success">Завершенный</div>
   elementsTable.listRequst.insertAdjacentHTML("beforeend", listHTML);
-
-  // ДЛЯ ПРИСВАИВАНИЯ СТАТУСА
 }
+function statusColor(record) {
+  if (record.status === "Новая") {
+    return "badge-danger";
+  } else if (record.status === "В работе") {
+    return "badge-warning";
+  } else if (record.status === "Завершена") {
+    return "badge-success";
+  }
+}
+
 export { elementsTable, renderListRequest };
-
-
-
-/* Здесь селектор атрибута используется для возврата списка элементов списка, 
-содержащихся в список, идентификатор которого имеет атрибут со значением : 
-"userlist""data-active""1"
-
-const container = document.querySelector("#userlist");
-const matches = container.querySelectorAll("li[data-active='1']"); */

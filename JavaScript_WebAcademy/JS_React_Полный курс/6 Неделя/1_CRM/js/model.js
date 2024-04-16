@@ -73,12 +73,19 @@ function checkEmpty(formInput) {
 // }
 
 function searchRequst(idReq) {
-  const resultRequst = getLocalStorage().find(item => item.id == idReq); // ВАЖНО: Обращай внимание на способ поиска элемента find, filter, for каждый по своему влияет на последующие шаги, а кокнретнее с выводом результата на страницу
-  return resultRequst
+  return requst.find((item) => item.id == idReq); // ВАЖНО: Обращай внимание на способ поиска элемента find, filter, for каждый по своему влияет на последующие шаги, а кокнретнее с выводом результата на страницу
 }
 
 function updateRequst(formData) {
-  return searchRequst(formData.id);
+  const requsts = searchRequst(formData.id);
+
+  requsts.name = formData.name.value;
+  requsts.phone = formData.phone.value;
+  requsts.email = formData.email.value;
+  requsts.product = formData.product.value;
+  requsts.status = formData.status.value;
+
+  setLocalStorage()
 }
 
 export {

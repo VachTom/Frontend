@@ -1,3 +1,5 @@
+import * as model from "../model.js";
+
 const elementsTable = {
   form: document.querySelector("#form"),
   number: document.querySelector("#number"),
@@ -8,9 +10,7 @@ const elementsTable = {
   email: document.querySelector("#email"),
   phone: document.querySelector("#phone"),
   status: document.querySelector("#status"),
-  saveEdit: document.querySelector("#saveEdit"),
-  // col: document.querySelectorAll(".col"),
-  // coll: document.querySelectorAll('[data-attr="collArr"]'),
+  // saveEdit: document.querySelector("#saveEdit"),
 };
 
 function renderResultRequst(requst) {
@@ -25,15 +25,14 @@ function renderResultRequst(requst) {
 }
 
 function getFormInput() {
-  return new FormData(elementsTable.form);
-  // return {
-  //   id: elementsTable.id.value,
-  //   name: elementsTable.name,
-  //   email: elementsTable.email,
-  //   phone: elementsTable.phone,
-  //   product: elementsTable.product,
-  //   status: elementsTable.status,
-  // };
+  return {
+    id: elementsTable.id.innerText,
+    name: elementsTable.name,
+    email: elementsTable.email,
+    phone: elementsTable.phone,
+    product: elementsTable.product,
+    status: elementsTable.status,
+  };
 }
 
 // //Этот код вывода на страницу, шел тяжелым путем, тк не мог вывести value input — выводился underfined. Оптимизация кода в функции renderResultRequst()

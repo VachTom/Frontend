@@ -15,17 +15,15 @@ function getRequstId() {
   return parseInt(params.get("id"));
 }
 
-
 function setupEventListener() {
   editView.elementsTable.form.addEventListener("submit", forSetupEventListener);
 }
+
 function forSetupEventListener(e) {
   e.preventDefault();
   const formData = editView.getFormInput();
-  console.log(formData.get('id'));
   model.updateRequst(formData);
+  window.location = "./table.html"
 }
-
-
 
 init();
