@@ -1,28 +1,31 @@
 import * as editView from "./edit.view.js";
 import * as model from "../model.js";
 
-
 function init() {
-  return getRequstId();
+  const id = getRequstId();
+  const requst = model.searchRequst(id);
+  console.log("Основа", requst);
+
+  editView.renderResultRequst(requst); // Выводим на стр Редактирования
+  setupEventListener();
 }
 
 function getRequstId() {
-  const params = new URLSearchParams(window.location.search);
-  const idReq = parseInt(params.get("id"));
-
-  const req = JSON.parse(localStorage.getItem("requst"));
-
-  const resultRequst = req.filter(item => item.id === idReq);
-  console.log("Вроде это", resultRequst);
-
-  editView.renderResultRequst(resultRequst);
+  const params = new URLSearchParams(window.location.search); // вытаскиваем id с сыллки со стр
+  return parseInt(params.get("id"));
 }
+
+
+function setupEventListener() {
+  editView.elementsTable.form.addEventListener("submit", forSetupEventListener);
+}
+function forSetupEventListener(e) {
+  e.preventDefault();
+  const formData = editView.getFormInput();
+  console.log(formData.get('id'));
+  model.updateRequst(formData);
+}
+
+
+
 init();
-
-
-
-editView.elementsTable.form.addEventListener("click", function (e) {
-  e.preventDefault()
-  const data = editView.getFormData()
-  console.log(data)
-})

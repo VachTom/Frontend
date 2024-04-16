@@ -6,7 +6,7 @@
 5. Реализовать модуль для быстрого добавления тестовых данных в форму. Аналогично тому как делали для проекта "Бюджетный калькулятор".
 6. Для обозначения переменных используем let и const. Без var.*/
 
-const requst = [];
+const requst = getLocalStorage();
 
 function dateFull() {
   const now = new Date();
@@ -29,24 +29,32 @@ function createRecord(formData) {
     phone: formData.phone,
     email: formData.email,
     product: formData.product,
-    status: formData.status
+    status: formData.status,
   };
   requst.push(record);
   console.log("Массив: ", requst);
-
-  localStorage.setItem("requst", JSON.stringify(requst));
+  setLocalStorage();
   return record;
 }
 
-function getLocalStorage(getLStorage) {
-  if (getLStorage != null) {
-    getLStorage.forEach(function (item) {
-      if (getLStorage) {
-        requst.push(item);
-        localStorage.setItem("requst", JSON.stringify(requst));
-      }
-    });
-  }
+function setLocalStorage() {
+  localStorage.setItem("requst", JSON.stringify(requst));
+}
+
+function getLocalStorage() {
+  return localStorage.getItem("requst")
+    ? JSON.parse(localStorage.getItem("requst"))
+    : [];
+
+  // Как я делал раньше, код выше оптимизация
+  // if (getLStorage != null) {
+  //   getLStorage.forEach(function (item) {
+  //     if (getLStorage) {
+  //       requst.push(item);
+  //       localStorage.setItem("requst", JSON.stringify(requst));
+  //     }
+  //   });
+  // }
 }
 
 function checkEmpty(formInput) {
@@ -55,13 +63,32 @@ function checkEmpty(formInput) {
   }
 }
 
-function findRecordEdit(dataIndex) {
-  const getLStorage = JSON.parse(localStorage.getItem("requst"));
-  model.getLocalStorage(getLStorage);
-  getLStorage.forEach(function (item) {
-    console.log(item)
-    console.log(dataIndex)
-  })
+// function findRecordEdit(dataIndex) {
+//   // const getLStorage = JSON.parse(localStorage.getItem("requst"));
+//   // model.getLocalStorage(getLocalStorageJSONparse());
+//   getLocalStorageJSONparse().forEach(function (item) {
+//     console.log(item);
+//     console.log(dataIndex);
+//   });
+// }
+
+function searchRequst(idReq) {
+  const resultRequst = getLocalStorage().find(item => item.id == idReq); // ВАЖНО: Обращай внимание на способ поиска элемента find, filter, for каждый по своему влияет на последующие шаги, а кокнретнее с выводом результата на страницу
+  return resultRequst
 }
 
-export { requst, createRecord, dateFull, getLocalStorage, checkEmpty, findRecordEdit };
+function updateRequst(formData) {
+  return searchRequst(formData.id);
+}
+
+export {
+  requst,
+  createRecord,
+  dateFull,
+  setLocalStorage,
+  getLocalStorage,
+  checkEmpty,
+  searchRequst,
+  // findRecordEdit,
+  updateRequst,
+};
