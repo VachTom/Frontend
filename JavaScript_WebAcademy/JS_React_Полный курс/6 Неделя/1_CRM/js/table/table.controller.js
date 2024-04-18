@@ -1,11 +1,25 @@
 import * as viewTable from "./table.view.js";
+import * as model from "../model.js";
 
-const getLStorage = JSON.parse(localStorage.getItem("requst"));
-console.log(getLStorage);
+model.getLocalStorage().forEach((item) => viewTable.renderListRequest(item)); // Вывод таблицы с заявками
 
-function sda(arr) {
-  arr.forEach(function (item) {
-    viewTable.renderListRequest(item);
-  });
-}
-sda(getLStorage);
+viewTable.elementsTable.body.addEventListener("click", function d(e) {
+  if (
+    (e.target.textContent === "Все") |
+    (e.target.textContent === "Все вместе") |
+    (e.target.textContent === "Новые") |
+    (e.target.textContent === "Новые ") |
+    (e.target.textContent === "В работе") |
+    (e.target.textContent === "Завершенные")
+  ) {
+    console.log(model.searchFilterStatus(e.target.textContent));
+  }
+});
+
+// function setupEventListener(e) {
+//   e.preventDefault();
+
+//   // if () {
+
+//     // }
+// }

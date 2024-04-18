@@ -63,17 +63,16 @@ function checkEmpty(formInput) {
   }
 }
 
-// function findRecordEdit(dataIndex) {
-//   // const getLStorage = JSON.parse(localStorage.getItem("requst"));
-//   // model.getLocalStorage(getLocalStorageJSONparse());
-//   getLocalStorageJSONparse().forEach(function (item) {
-//     console.log(item);
-//     console.log(dataIndex);
-//   });
-// }
-
 function searchRequst(idReq) {
   return requst.find((item) => item.id == idReq); // ВАЖНО: Обращай внимание на способ поиска элемента find, filter, for каждый по своему влияет на последующие шаги, а кокнретнее с выводом результата на страницу
+}
+
+function searchFilterStatus(filterStatus) {
+  return requst.filter((item) => item.status == filterStatus);
+}
+
+function searchFilterProduct(filterProduct) {
+  return requst.filter((item) => item.product == filterProduct);
 }
 
 function updateRequst(formData) {
@@ -85,7 +84,7 @@ function updateRequst(formData) {
   requsts.product = formData.product.value;
   requsts.status = formData.status.value;
 
-  setLocalStorage()
+  setLocalStorage();
 }
 
 export {
@@ -96,6 +95,7 @@ export {
   getLocalStorage,
   checkEmpty,
   searchRequst,
-  // findRecordEdit,
   updateRequst,
+  searchFilterStatus,
+  searchFilterProduct
 };

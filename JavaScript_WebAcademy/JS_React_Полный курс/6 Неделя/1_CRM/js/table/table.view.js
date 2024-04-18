@@ -4,9 +4,12 @@ const elementsTable = {
   listRequst: document.getElementById("tbody"),
   trList: document.getElementsByClassName("trList"),
   aEdit: document.getElementsByClassName("aEdit"),
+  leftNavID: document.querySelectorAll('[data-role="left-status"]'),
+  topNavID: document.querySelector('.btn-group'),
 };
 
 function renderListRequest(record) {
+  // console.log(elementsTable.topNavID)
   const listHTML = `
  <tr class="trList">
   <th class="idRow" scope="row">${record.id}</th>
