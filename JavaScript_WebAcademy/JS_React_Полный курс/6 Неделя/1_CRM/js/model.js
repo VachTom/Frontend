@@ -69,6 +69,7 @@ function searchRequst(idReq) {
 
 function searchFilterStatus(filterStatus) {
   return requst.filter((item) => item.status == filterStatus);
+
 }
 
 function searchFilterProduct(filterProduct) {
@@ -86,6 +87,8 @@ function updateRequst(formData) {
 
   setLocalStorage();
 }
+
+
 
 export {
   requst,
