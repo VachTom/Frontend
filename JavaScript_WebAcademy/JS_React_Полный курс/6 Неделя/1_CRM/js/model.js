@@ -41,9 +41,9 @@ function setLocalStorage() {
   localStorage.setItem("requst", JSON.stringify(requst));
 }
 
-function getLocalStorage() {
-  return localStorage.getItem("requst")
-    ? JSON.parse(localStorage.getItem("requst"))
+function getLocalStorage(requst) {
+  return localStorage.getItem(requst)
+    ? JSON.parse(localStorage.getItem(requst))
     : [];
 
   // Как я делал раньше, код выше оптимизация

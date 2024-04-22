@@ -22,19 +22,20 @@ function statusIf(e) {
   (e.target.textContent === "Все") | (e.target.textContent === "Все вместе")
     ? console.log(model.requst)
     : "";
-}
 
-function forStatusIf(text) {
-return text === "Новые"
-  ? (text = "Новая")
-  : text === "Новые "
-  ? (text = "Новая")
-  : text === "Завершенные"
-  ? (text = "Завершена")
-  : text === "В работе"
-  ? (text = "В работе")
-  : "";
-}
+    function forStatusIf(text) {
+      return text === "Новые"
+        ? (text = "Новая")
+        : text === "Новые "
+        ? (text = "Новая")
+        : text === "Завершенные"
+        ? (text = "Завершена")
+        : text === "В работе"
+        ? (text = "В работе")
+        : "";
+      }
+  }
+
 
 
 
