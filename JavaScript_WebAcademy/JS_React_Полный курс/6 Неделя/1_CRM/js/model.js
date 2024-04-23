@@ -7,7 +7,7 @@
 6. Для обозначения переменных используем let и const. Без var.*/
 
 const requst = getLocalStorage();
-
+const requstFilter = ""
 function dateFull() {
   const now = new Date();
   const year =
@@ -41,12 +41,12 @@ function setLocalStorage() {
   localStorage.setItem("requst", JSON.stringify(requst));
 }
 
-function getLocalStorage(requst) {
-  return localStorage.getItem(requst)
-    ? JSON.parse(localStorage.getItem(requst))
+function getLocalStorage() {
+  return localStorage.getItem("requst")
+    ? JSON.parse(localStorage.getItem("requst"))
     : [];
 
-  // Как я делал раньше, код выше оптимизация
+  // Это капут.. Код ниже, это то как я делал раньше, код выше оптимизация
   // if (getLStorage != null) {
   //   getLStorage.forEach(function (item) {
   //     if (getLStorage) {
@@ -69,7 +69,6 @@ function searchRequst(idReq) {
 
 function searchFilterStatus(filterStatus) {
   return requst.filter((item) => item.status == filterStatus);
-
 }
 
 function searchFilterProduct(filterProduct) {
@@ -89,7 +88,6 @@ function updateRequst(formData) {
 }
 
 
-
 export {
   requst,
   createRecord,
@@ -100,5 +98,5 @@ export {
   searchRequst,
   updateRequst,
   searchFilterStatus,
-  searchFilterProduct
+  searchFilterProduct,
 };

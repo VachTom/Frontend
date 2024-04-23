@@ -4,8 +4,6 @@ const elementsTable = {
   listRequst: document.getElementById("tbody"),
   trList: document.getElementsByClassName("trList"),
   aEdit: document.getElementsByClassName("aEdit"),
-  leftNavID: document.querySelectorAll('[data-role="left-status"]'),
-  topNavID: document.querySelector('.btn-group'),
 };
 
 function renderListRequest(record) {
@@ -39,4 +37,9 @@ function statusColor(record) {
   }
 }
 
-export { elementsTable, renderListRequest };
+function clearListRequest() {  // Ставим класс none в зависимости от условии
+  
+elementsTable.listRequst.remove()
+}
+
+export { elementsTable, renderListRequest, clearListRequest};
