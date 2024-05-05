@@ -13,9 +13,9 @@ function statusIf(e) {
   (e.target.textContent === "В работе") |
   (e.target.textContent === "Завершенные")
     ? viewTable.clearListRequest() // у тебя всё есть, все функции готовы, нужно я думаю просто визуально удалять всё и по фильтру прогоняться 
-    // то есть когда нажимаешь на кнопку новые удаляются все в работе и завершенные. По такому принципу 
+    // то есть когда нажимаешь на кнопку новые => удаляются все «в работе» и «завершенные». По такому принципу 
     
-    : //  console.log(model.searchFilterStatus(forStatusIf(e.target.textContent)))
+    : //console.log(model.searchFilterStatus(forStatusIf(e.target.textContent)))
 
       // ? viewTable.renderListRequest(model.searchFilterStatus(forStatusIf(e.target.textContent)))
       "";
