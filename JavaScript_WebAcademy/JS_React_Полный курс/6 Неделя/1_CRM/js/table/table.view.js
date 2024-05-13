@@ -37,9 +37,12 @@ function statusColor(record) {
   }
 }
 
-function clearListRequest() {  // Ставим класс none в зависимости от условии
-  
-elementsTable.listRequst.remove()
+function clearListRequest(record) {
+  // Ставим класс none в зависимости от условии
+
+  // record.forEach((item) => renderListRequest(item));
+
+  elementsTable.listRequst.classList.add("none");
 }
 
-export { elementsTable, renderListRequest, clearListRequest};
+export { elementsTable, renderListRequest, clearListRequest };

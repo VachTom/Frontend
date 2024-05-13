@@ -12,17 +12,17 @@ function statusIf(e) {
   (e.target.textContent === "Новые ") |
   (e.target.textContent === "В работе") |
   (e.target.textContent === "Завершенные")
-    ? viewTable.clearListRequest() // у тебя всё есть, все функции готовы, нужно я думаю просто визуально удалять всё и по фильтру прогоняться 
+    ? viewTable.clearListRequest(model.searchFilterStatus(forStatusIf(e.target.textContent))) // у тебя всё есть, все функции готовы, нужно я думаю просто визуально удалять всё и по фильтру прогоняться 
     // то есть когда нажимаешь на кнопку новые => удаляются все «в работе» и «завершенные». По такому принципу 
-    
-    : //console.log(model.searchFilterStatus(forStatusIf(e.target.textContent)))
+    // ? console.log(model.searchFilterStatus(forStatusIf(e.target.textContent)))
+    // ? viewTable.renderListRequest(model.searchFilterStatus(forStatusIf(e.target.textContent)))
+    :
 
-      // ? viewTable.renderListRequest(model.searchFilterStatus(forStatusIf(e.target.textContent)))
       "";
 
   (e.target.textContent === "Все") | (e.target.textContent === "Все вместе")
     ? console.log(model.requst)
-    : "";
+    : "";       
 
   function forStatusIf(text) {
     return text === "Новые"
@@ -43,6 +43,12 @@ function jl(req) {
   });
   return item;
 }
+// сначала мы удаляем весь список, потом должны добавить этот список. а не добавляется потому что мы передаем масив 
+
+
+
+
+
 
 // }
 
