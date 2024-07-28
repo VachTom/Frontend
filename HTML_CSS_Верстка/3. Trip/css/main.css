@@ -1,0 +1,122 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --conteiner-width: 1270px;
+  --conteiner-padding: 15px;
+  --secondColor: rgb(15, 31, 28, 0.5);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f6f6;
+  color: #0f1f1c;
+}
+
+body a {
+  color: #fff;
+}
+
+.none {
+  display: none !important;
+}
+
+.header {
+  position: relative;
+  min-height: 940px;
+  padding-top: 44px;
+  color: #fff;
+  background: linear-gradient(154deg, #428e5f 0%, #112120 100%), #204434;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 96px;
+
+  background-image: url(./../img/header/header-button.svg);
+}
+.container {
+  max-width: var(--conteiner-width);
+  padding: var(--conteiner-padding);
+  margin: 0 auto;
+}
+
+.container-right {
+  padding-left: calc(
+    (100% - var(--conteiner-width)) / 2 + var(--conteiner-padding)
+  );
+}
+
+.header_top {
+  padding-bottom: 86px;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 80px;
+  align-items: center;
+}
+
+.header_logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.header_nav_menu {
+  display: flex;
+  column-gap: 80px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.header_nav_menu a {
+  position: relative;
+}
+
+.header_nav_menu a.header_nav_active::after,
+.header_nav_menu a:hover::after {
+  content: " ";
+  position: absolute;
+  display: block;
+
+  background: #c4c4c4;
+  border-radius: 50px;
+  bottom: -6px;
+  left: 0;
+  right: 10px;
+
+  height: 4px;
+
+  transition: 0.3s ease-in;
+}
+
+.header_login {
+  display: flex;
+  column-gap: 25px;
+  font-size: 15px;
+  align-items: center;
+}
+
+.header_login_btn {
+  display: inline-block;
+  padding: 13px 44px;
+  border-radius: 100px;
+  width: 128px;
+  height: 49px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: linear-gradient(172deg, #ff7b4e 0%, #ff584e 100%);
+}
+
+.header_login_btn:hover {
+  color: #204434;
+  transition: color 0.2s ease-in;
+}
+
+.header_login_btn:active {
+  position: relative;
+  top: 2px;
+}
