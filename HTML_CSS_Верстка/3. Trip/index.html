@@ -15,16 +15,35 @@
       rel="stylesheet"
       href="./css/reset.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
   </head>
   <body>
-    <header class="header">
+    <header class="header none">
       <div class="container">
         <div class="header_top">
           <nav class="header_nav">
-            <a href="#" class="header_logo">GoTrip</a>
-                     
+            <a
+              href="#"
+              class="header_logo"
+              >GoTrip</a
+            >
+
             <ul class="header_nav_menu">
-              <li><a href="#!" class="header_nav_active">Home</a></li>
+              <li>
+                <a
+                  href="#!"
+                  class="header_nav_active"
+                  >Home</a
+                >
+              </li>
               <li><a href="#!">Services</a></li>
               <li><a href="#!">Pricing</a></li>
               <li><a href="#!">Contact</a></li>
@@ -32,28 +51,95 @@
 
             <ul class="header_login">
               <li><a href="#!">Sign up</a></li>
-              <li><a href="#!" class="header_login_btn">Login</a></li>
+              <li>
+                <a
+                  href="#!"
+                  class="header_login_btn"
+                  >Login</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
-        <div class="header_content">
-          <div class="header_badge">exsplore the world</div>
-          <div class="header_title"></div>
-          <div class="header_text"></div>
-          <a href="#!" class="header_btn"></a>
-          
+        <div class="header_bottom">
+          <div class="header_content">
+            <div class="header_badge">exsplore the world</div>
+            <h1 class="header_title">
+              Explore The Natural Beauty Of Halmahera With Us
+            </h1>
+            <div class="header_text">
+              <p>
+                explore the beauty of god's earth in a beautiful forest and have
+                fun
+              </p>
+            </div>
+            <a
+              href="#!"
+              class="header_btn"
+              >Exsplore Now</a
+            >
+          </div>
 
-          Explore The Natural
-Beauty Of Halmahera
-With Us
-
-explore the beauty of god's earth in a beautiful forest and have fun
-
-Exsplore Now
+          <div class="header_img">
+            <img
+              src="./img/header/header_img.png"
+              alt="Женщина"
+            />
+          </div>
         </div>
       </div>
     </header>
 
+    <main>
+      <section class="destinations">
+        <div class="container-right">
+          <div class="destinations_row">
+            <div class="destinations_content">
+              <h2 class="dest_title"><span>Choice O </span>Destinations</h2>
+              <div class="dest_text">
+                explore the beauty of god's earth in a beautiful forest and have
+                fun
+              </div>
+              <a
+                href="#!"
+                class="btn"
+                >Exsplore Now</a
+              >
+            </div>
+            <div class="destinations_slaider">
+              <div class="slider">
+                <div class="owl-carousel">
+                  <img
+                    class="slaider_item"
+                    src="./img/slader/1.jpg"
+                    alt="slaider_item_1"
+                  />
+                  <img
+                    class="slaider_item"
+                    src="./img/slader/2.jpg"
+                    alt="slaider_item_2"
+                  />
+                  <img
+                    class="slaider_item"
+                    src="./img/slader/3.jpg"
+                    alt="slaider_item_3"
+                  />
 
+                  <button class="slader_item_btn_prev"><img src="./img/slader/arow_prev.jpg" alt="" ></button>
+                  <button class="slader_item_btn_next"><img src="./img/slader/arow_prev.jpg" alt="" ></button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script
+      src="./js/main.js"
+      type="module"
+    ></script>
   </body>
 </html>

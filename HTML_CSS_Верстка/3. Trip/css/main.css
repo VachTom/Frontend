@@ -22,6 +22,7 @@ body a {
 }
 
 .header {
+  overflow: hidden;
   position: relative;
   min-height: 940px;
   padding-top: 44px;
@@ -119,4 +120,156 @@ body a {
 .header_login_btn:active {
   position: relative;
   top: 2px;
+}
+
+/* ============ Header_Content ============ */
+.header_bottom {
+  display: flex;
+}
+
+.header_content {
+  position: relative;
+  z-index: 1;
+  max-width: 592px;
+}
+
+.header_badge {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 11px 30px;
+  font-weight: 500;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.25);
+
+  margin-bottom: 7px;
+}
+.header_title {
+  margin-bottom: 30px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 55px;
+}
+.header_text {
+  margin-bottom: 68px;
+  font-weight: 700;
+  font-size: 25px;
+  color: #fff;
+  opacity: 0.5;
+}
+.header_btn {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 25px;
+  color: #fefefe;
+
+  padding: 27px 48px;
+
+  border-radius: 27px;
+  background: linear-gradient(172deg, #ff7b4e 0%, #ff584e 100%);
+}
+
+.header_btn:hover {
+  color: #204434;
+  transition: color 0.2s ease-in;
+}
+
+.header_btn:active {
+  position: relative;
+  top: 2px;
+}
+
+.header_img {
+  position: relative;
+  flex-grow: 1;
+}
+.header_img img {
+  position: absolute;
+  top: -181px;
+  right: -87px;
+
+  max-width: unset; /* не сжимает картинку*/
+  width: 894px;
+  height: 940px;
+}
+
+/* ============ Destination_Content ============ */
+
+.destinations {
+  padding: 96px 0 100px;
+  overflow-x: hidden;
+}
+.destinations_row {
+  display: flex;
+  column-gap: 50px;
+}
+.destinations_content {
+  max-width: 456px;
+}
+.dest_title {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.dest_title span {
+  font-size: 30px;
+}
+
+.dest_text {
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--secondColor);
+  margin: 15px 0 60px;
+}
+.btn {
+  display: inline-block;
+  background: linear-gradient(172deg, #ff7b4e 0%, #ff584e 100%);
+  border-radius: 27px;
+  width: 223px;
+  height: 79px;
+
+  font-weight: 600;
+  font-size: 20px;
+  color: #fefefe;
+
+  padding: 25px 44px 24px 45px;
+}
+.btn:hover {
+  color: #204434;
+  transition: color 0.2s ease-in;
+}
+
+.btn:active {
+  position: relative;
+  top: 2px;
+}
+
+.destinations_slaider {
+  width: 1100px;
+  flex-shrink: 0;
+}
+
+.slider {
+  display: flex;
+  column-gap: 30px;
+}
+
+.slaider_item {
+  margin-top: 27px;
+  border-radius: 35px;
+
+  width: 335px;
+  height: 402px;
+  /* object-fit: cover; */
+  transition: 0.2s ease-in;
+}
+
+.slider .center .slaider_item {
+  width: 380px;
+  height: 456px;
+  margin-top: 0;
+}
+.owl-carousel {
+}
+.slader_item_btn_prev{
+  background-color: #204434;
 }
