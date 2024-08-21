@@ -1,206 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>GoTrip</title>
-    <link
-      rel="stylesheet"
-      href="./css/main.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./css/reset.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoTrip</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-  </head>
-  <body>
-    <header class="header none">
-      <div class="container">
-        <div class="header_top">
-          <nav class="header_nav">
-            <a
-              href="#"
-              class="header_logo"
-              >GoTrip</a
-            >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+</head>
+<body>
+  <header class="header ">
+    <div class="container">
+      <div class="header_top">
+        <nav class="nav">
+          <a href="#" class="nav_logo">GoTrip</a>
+          <ul class="nav_menu">
+            <li><a href="#!" class="nav_active">Home</a></li>
+            <li><a href="#!">Services</a></li>
+            <li><a href="#!">Pricing</a></li>
+            <li><a href="#!">Contact</a></li>
+          </ul>
 
-            <ul class="header_nav_menu">
-              <li>
-                <a
-                  href="#!"
-                  class="header_nav_active"
-                  >Home</a
-                >
-              </li>
-              <li><a href="#!">Services</a></li>
-              <li><a href="#!">Pricing</a></li>
-              <li><a href="#!">Contact</a></li>
-            </ul>
+          <ul class="nav_login">
+            <li><a href="#!">Sign up</a></li>
+            <li> <a href="#!" class="nav_login_btn">Login</a></li>
+          </ul>
 
-            <ul class="header_login">
-              <li><a href="#!">Sign up</a></li>
-              <li>
-                <a
-                  href="#!"
-                  class="header_login_btn"
-                  >Login</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header_bottom">
-          <div class="header_content">
-            <div class="header_badge">exsplore the world</div>
-            <h1 class="header_title">
-              Explore The Natural Beauty Of Halmahera With Us
-            </h1>
-            <div class="header_text">
-              <p>
-                explore the beauty of god's earth in a beautiful forest and have
-                fun
-              </p>
+          <button type="button" class="nav_toggle">
+            <div class="menu-icon-wrapper">
+              <div class="menu-icon"></div>
             </div>
-            <a
-              href="#!"
-              class="header_btn"
-              >Exsplore Now</a
-            >
+          </button>
+          
+        </nav>
+      </div>
+      <div class="header_bottom">
+        <div class="header_content">
+          <div class="header_badge">exsplore the world</div>
+          <h1 class="header_title">
+            Explore The Natural Beauty Of Halmahera With Us
+          </h1>
+          <div class="header_text">
+            <p> explore the beauty of god's earth in a beautiful forest and have fun </p>
           </div>
+          <a href="#!" class="header_btn">Exsplore Now</a>
+        </div>
 
-          <div class="header_img">
-            <img
-              src="./img/header/header_img.png"
-              alt="Женщина"
-            />
+        <div class="header_img">
+          <img src="./img/header/header_img.png" alt="Женщина" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="destinations ">
+      <div class="container-right">
+        <div class="destinations_row">
+          <div class="destinations_content">
+            <h2 class="dest_title"><span>Choice O </span>Destinations</h2>
+            <div class="dest_text">
+              explore the beauty of god's earth in a beautiful forest and have
+              fun
+            </div>
+            <a href="#!" class="btn">Exsplore Now</a>
+          </div>
+          <div class="destinations_slaider">
+            <div class="slider">
+              <div class="owl-carousel">
+                <img class="slaider_item" src="./img/slader/1.jpg" alt="slaider_item_1" />
+                <img class="slaider_item" src="./img/slader/2.jpg" alt="slaider_item_2" />
+                <img class="slaider_item" src="./img/slader/3.jpg" alt="slaider_item_3" />
+              </div>
+
+              <button class="slader_btn slader_btn_prev">
+                <img src="./img/slader/arow_prev.svg" alt="arow_prev" />
+              </button>
+
+              <button class="slader_btn slader_btn_next">
+                <img src="./img/slader/arow_next.svg" alt="arow_next" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="destinations none">
-        <div class="container-right">
-          <div class="destinations_row">
-            <div class="destinations_content">
-              <h2 class="dest_title"><span>Choice O </span>Destinations</h2>
-              <div class="dest_text">
-                explore the beauty of god's earth in a beautiful forest and have
-                fun
+    <section class="customers ">
+      <div class="container">
+        <div class="customers_row">
+          <div class="customers_img">
+            <img src="./img/custemers/custemers.png" alt="custemers" />
+          </div>
+
+          <div class="customers_content">
+            <h2 class="cust_subtitle">What do customers say about us?</h2>
+            <div class="cust_cont_pro">
+              <div class="cust_cont_man">
+                <img class="customers2" src="./img/custemers/customers_man.svg" alt="custemers2" />
               </div>
-              <a
-                href="#!"
-                class="btn"
-                >Exsplore Now</a
-              >
-            </div>
-            <div class="destinations_slaider">
-              <div class="slider">
-                <div class="owl-carousel">
-                  <img
-                    class="slaider_item"
-                    src="./img/slader/1.jpg"
-                    alt="slaider_item_1"
-                  />
-                  <img
-                    class="slaider_item"
-                    src="./img/slader/2.jpg"
-                    alt="slaider_item_2"
-                  />
-                  <img
-                    class="slaider_item"
-                    src="./img/slader/3.jpg"
-                    alt="slaider_item_3"
-                  />
-                </div>
-
-                <button class="slader_btn slader_btn_prev">
-                  <img
-                    src="./img/slader/arow_prev.svg"
-                    alt="arow_prev"
-                  />
-                </button>
-
-                <button class="slader_btn slader_btn_next">
-                  <img
-                    src="./img/slader/arow_next.svg"
-                    alt="arow_next"
-                  />
-                </button>
+              <div class="cust_cont_h">
+                <h3>Alpanasap</h3>
+                <h4>Japung, Indonesia</h4>
               </div>
             </div>
+
+            <p>
+              Very satisfying service makes it comfortable, a beautiful place
+              in the world.
+            </p>
+            <img class="stars_rat" src="./img/custemers/stars-rating.svg" alt="stars_rating" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="customers none">
-        <div class="container">
-          <div class="customers_row">
-            <div class="customers_img">
-              <img
-                src="./img/custemers/custemers.png"
-                alt="custemers"
-              />
-            </div>
-
-            <div class="customers_content">
-              <h2 class="cust_subtitle">What do customers say about us?</h2>
-              <div class="cust_cont_pro">
-                <div class="cust_cont_man">
-                  <img
-                    class="customers2"
-                    src="./img/custemers/customers_man.svg"
-                    alt="custemers2"
-                  />
-                </div>
-                <div class="cust_cont_h">
-                  <h3>Alpanasap</h3>
-                  <h4>Japung, Indonesia</h4>
-                </div>
-              </div>
-
-              <p>
-                Very satisfying service makes it comfortable, a beautiful place
-                in the world.
-              </p>
-              <img
-                class="stars_rat"
-                src="./img/custemers/stars-rating.svg"
-                alt="stars_rating"
-              />
-            </div>
-          </div>
+    <section class="cta ">
+      <div class="container">
+        <div class="cta_plate">
+          <h1 class="cta_title">
+            Prepare Yourself And <br />Start Exploring With Us.
+          </h1>
+          <h3 class="cta_subtitle">
+            There's the best discount for you today.
+          </h3>
+          <a href="#!" class="cta_btn">Get Started</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="cta">
-        <div class="container">
-          <div class="cta_plate">
-            <h1 class="cta_title">Prepare Yourself And <br>Start Exploring With Us.</h1>
-            <h3 class="cta_subtitle">There's the best discount for you today.</h3>
-            <a href="#!" class="cta_btn">Get Started</a>
-          </div>
+    <section class="subscribe">
+      <div class="container">
+        <div class="subscribe_column">
+          <h2 class="subscribe_title">Subscribe To Our Newsletter</h2>
+          <form class="subscribe--form">
+            <input type="email" class="subscribe_email" placeholder="Yourmail@mail.com" />
+            <a href="#!" class="subscribe_btn">Subscribe</a>
+          </form>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="nav_logo logo--footer">GoTrip</a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script
-      src="./js/main.js"
-      type="module"
-    ></script>
-  </body>
+        <ul class="nav_menu nav--footer">
+          <li>
+            <a href="#!" class="nav_active">Home</a>
+          </li>
+          <li><a href="#!">Services</a></li>
+          <li><a href="#!">Pricing</a></li>
+          <li><a href="#!">Contact</a></li>
+        </ul>
+
+        <ul class="nav_login">
+          <li><a href="#!">Sign up</a></li>
+          <li>
+            <button href="#!" class="nav_login_btn btn_footer">Login</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+</body>
 </html>
