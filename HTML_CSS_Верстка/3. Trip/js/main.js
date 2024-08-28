@@ -5,6 +5,14 @@ owl.owlCarousel({
   loop: true,
   margin: 30,
   item: 3,
+  responsive: {
+    1000: {
+      margin: 20,
+    },
+    1200: {
+      margin: 30,
+    },
+  },
 });
 
 $(".slader_btn_prev").click(function () {
@@ -17,7 +25,9 @@ $(".slader_btn_next").click(function () {
 
 const navBnt = document.querySelector(".nav_toggle");
 const menuIcon = document.querySelector(".menu-icon");
+const nav = document.querySelector("nav");
 
 menuIcon.onclick = function () {
-  menuIcon.classList.toggle("menu-icon-active");
+  menuIcon.classList.toggle("menu-icon--active");
+  nav.classList.toggle("nav--mobile");
 };

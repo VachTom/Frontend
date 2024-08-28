@@ -64,6 +64,8 @@ body a {
 .nav_logo {
   font-weight: 700;
   font-size: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav_menu {
@@ -541,45 +543,41 @@ body a {
 .menu-icon {
   position: relative;
   width: var(--width);
-  height: var(--height);
-  background-color: var(--color)
+  height: var(--line-height);
+  background-color: var(--color);
 }
-.menu-icon::before {
+.menu-icon::before,
+.menu-icon::after {
   content: "";
+  display: block;
   position: absolute;
-  top: calc(var(--line-height) * -2)
-  /* top: -10px; */
-  left: 0px;
+  left: 0;
   width: var(--width);
-  height: var(--height);
-  background-color: var(--color)
+  height: var(--line-height);
+  background-color: var(--color);
   transition: transform var(--time) ease-in, top var(--time) linear var(--time);
 }
 .menu-icon::after {
-  content: "";
-  position: absolute;
-  top: calc(var(--line-height) * 2)
-  left: 0px;
-  width: var(--width);
-  height: var(--height);
-  background-color: var(--color)
-  transition: transform var(--time) ease-in, top var(--time) linear var(--time) ;
+  top: calc(var(--line-height) * -2);
+}
+.menu-icon::before {
+  top: calc(var(--line-height) * 2);
 }
 
-.menu-icon.menu-icon-active {
+.menu-icon.menu-icon--active {
   background-color: transparent;
 }
-.menu-icon.menu-icon-active::before {
+.menu-icon.menu-icon--active::before,
+.menu-icon.menu-icon--active::after {
   top: 0;
-  /* content: ""; */
-  transform: rotate(45deg);
-  transition: top var(--time) linear, transform var(--time) ease-in var(--time) ;
+  transition: top var(--time) linear, transform var(--time) ease-in var(--time);
 }
-.menu-icon.menu-icon-active::after {
-  top: 0;
-  /* content: ""; */
+
+.menu-icon.menu-icon--active::before {
   transform: rotate(-45deg);
-  transition: top var(--time) linear, transform var(--time) ease-in var(--time) ;
+}
+.menu-icon.menu-icon--active::after {
+  transform: rotate(45deg);
 }
 /* ============ Media ============ */
 @media (max-width: 1269px) {
@@ -587,7 +585,11 @@ body a {
     padding-left: 15px;
   }
 }
-
+@media (max-width: 1200px) {
+.destinations_slaider{
+  width: 900px;
+}
+}
 @media (max-width: 1000px) {
   .nav_menu {
     display: none;
@@ -598,10 +600,130 @@ body a {
   .nav_toggle {
     display: block;
   }
+
+  .nav--mobile .nav_menu a.active::after,
+  .nav--mobile .nav_menu a:hover::after {
+    display: none;
+  }
+
+  .nav--mobile {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    top: -15px;
+    left: 0;
+    z-index: 99;
+
+    flex-direction: column;
+    padding: 40px 40px;
+    align-items: center;
+
+    background: linear-gradient(209deg, #428e5f 0%, #112120 100%), #204434;
+  }
+
+  .nav--mobile .nav_menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    font-size: 22px;
+    align-items: center;
+  }
+
+  .nav--mobile .nav_logo {
+    display: block;
+    font-size: 34px;
+    column-gap: 80px;
+    align-items: center;
+  }
+
+  .nav--mobile .nav_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+
+    font-size: 22px;
+  }
+
+  .nav--mobile .nav_login_btn {
+    padding: 9px 36px;
+    font-size: 20px;
+  }
+
+  .nav--mobile .nav_toggle {
+    position: fixed;
+    top: 35px;
+    right: 15px;
+  }
+
+  .header_img img {
+    right: -256px;
+  }
+  .header_img::after {
+    right: -300px;
+  }
 }
 
-@media (max-width: 1269px) {
+@media (max-width: 850px) {
+  .header {
+    padding-top: 20px;
+    min-height: unset;
+  }
+  .header_top {
+    padding-bottom: 40px;
+  }
+
+  .header_bottom {
+    flex-direction: column;
+  }
+  .header_img img {
+    position: static;
+    width: 70%;
+    height: auto;
+  }
+  .header_img::after {
+    top: 100px;
+    right: 0px;
+    right: -300px;
+  }
+
+  .header_title {
+    margin-bottom: 40px;
+    font-size: 35px;
+  }
+  .header_text {
+    max-width: 400px;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+  .header_badge {
+    margin-bottom: 5px;
+    padding: 20px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .header_btn {
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 18px;
+  }
 }
 
-@media (max-width: 1269px) {
+@media (max-width: 460px) {
+  .header {
+  }
+  .header_img {
+  }
+
+  .nav--mobile .nav_menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .nav--mobile .nav_toggle {
+    top: 35px;
+    right: 15px;
+  }
 }
