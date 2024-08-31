@@ -6,6 +6,9 @@ owl.owlCarousel({
   margin: 30,
   item: 3,
   responsive: {
+    850: {
+      item: 2,
+    },
     1000: {
       margin: 20,
     },
